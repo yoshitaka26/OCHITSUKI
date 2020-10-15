@@ -29,6 +29,9 @@ class AddViewController: UIViewController {
         
         finishButton.layer.cornerRadius = finishButton.frame.size.height / 4
         
+        self.orderDate.setValue(UIColor.darkGray, forKeyPath: "textColor")
+        self.orderDate.setValue(false, forKey: "highlightsToday")
+
         
         if let data = dataRecord.loadItems() {
             projectArray = data
@@ -86,6 +89,7 @@ class AddViewController: UIViewController {
         
         let action = UIAlertAction(title: "入力", style: .default) { (action) in
             label.text = textFiled.text!
+            label.textColor = UIColor.darkGray
         }
         
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))

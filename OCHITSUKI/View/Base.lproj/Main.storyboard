@@ -61,7 +61,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="cci-88-1vw" secondAttribute="bottom" constant="30" id="NT2-Jy-NpU"/>
                                                             <constraint firstItem="jGx-gz-HdS" firstAttribute="centerX" secondItem="Xfo-UF-upA" secondAttribute="centerX" id="U25-QF-fsy"/>
@@ -92,7 +92,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="pz1-6v-T9Y" firstAttribute="centerX" secondItem="vHa-y8-JU1" secondAttribute="centerX" id="4kP-Wj-vLd"/>
                                                             <constraint firstItem="pz1-6v-T9Y" firstAttribute="centerY" secondItem="vHa-y8-JU1" secondAttribute="centerY" id="CZG-5W-fp9"/>
@@ -403,7 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ivA-UD-Og4"/>
+        <segue reference="Ctd-cP-zh7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
