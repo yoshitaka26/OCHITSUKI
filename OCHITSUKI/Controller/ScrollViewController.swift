@@ -10,82 +10,158 @@ import UIKit
 
 class ScrollViewController: UIViewController {
     
-    let numberOfPages = 5
-    let colors: [UIColor] = [.yellow, .gray, .red, .blue, .brown]
+    let dataRecord = DataRecordModel()
+    var projectArray = [ProjectDataModel]()
     
+    var titleName: String = "案件"
+    
+    @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var projectTitle: UILabel!
+    @IBOutlet weak var orderAmount: UILabel!
+    @IBOutlet weak var grossProfit: UILabel!
+    @IBOutlet weak var orderDatePicker: UIDatePicker!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureSV()
+        addButton.layer.cornerRadius = addButton.frame.size.height / 4
         
+        self.orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
+        self.orderDatePicker.setValue(false, forKey: "highlightsToday")
         
-        scrollView.isPagingEnabled = true
+        scrollView.isPagingEnabled = false
         
+        if let name = UserDefaults.standard.value(forKey: "name") as? String {
+          titleName = name
+        }
+        mainTitleLabel.text = "\(titleName)入力"
+        textReset()
     }
     
     
-    func createLabel(contentsView: UIView) -> UILabel {
-        
-        // labelを作る
-        let label = UILabel()
-        
-        // labelの座標をcontentsViewの中心にする
-        let labelX = contentsView.center.x
-        let labelY = contentsView.center.y
-        label.frame = CGRect(x: labelX, y: labelY, width: 95, height: 50)
-        
-        label.text = "Label"
-        return label
+    override func viewWillAppear(_ animated: Bool) {
+        if let data = dataRecord.loadItems() {
+            projectArray = data
+        }
     }
     
-    func createPages(page: Int) -> UIView {
-         let pageView = UIView()
-         let pageSize = scrollView.frame.size
-         let positionX = pageSize.width * CGFloat(page)
-         let position = CGPoint(x: positionX, y: 0)
-         pageView.frame = CGRect(origin: position, size: pageSize)
-         pageView.backgroundColor = colors[page]
-         
-         return pageView
-     }
+    
+    @IBAction func projectButtonPressed(_ sender: UIButton) {
+        addInfo(name: "\(titleName)入力", label: projectTitle)
+    }
+    @IBAction func orderButtonPressed(_ sender: UIButton) {
+        addInfo(name: "受注額入力", label: orderAmount)
+    }
+    @IBAction func grossButtonPressed(_ sender: UIButton) {
+        addInfo(name: "粗利額入力", label: grossProfit)
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        if checkForEmptyLabel() {
+            let project = projectTitle.text!
+            let order = orderAmount.text!
+            let profit = grossProfit.text ?? ""
+            let date = orderDatePicker.date.timeIntervalSince1970
+            let data = ProjectDataModel(projectName: project, orderAmount: order, grossProfit: profit, orderDate: date)
+            projectArray.append(data)
+            dataRecord.saveItems(projectArray: projectArray)
+            
+            closeAndFinsh()
+        }
+    }
     
     
     
-    func createContentsView() -> UIView {
+    func addInfo(name: String, label: UILabel) {
+        var textFiled = UITextField()
         
-        let mainBoundSize: CGSize = UIScreen.main.bounds.size
-        let contentsWidth = scrollView.frame.width * CGFloat(numberOfPages)
-        print(mainBoundSize,contentsWidth)
-        // contentsViewを作る
-        let contentsView = UIView()
-        contentsView.frame = CGRect(x: 0, y: 0, width: contentsWidth, height: 1200)
+        let alert = UIAlertController(title: "\(name)", message: nil, preferredStyle: .alert)
         
-        // contentsViewにlabelを配置させる
-        let label = createLabel(contentsView: contentsView)
-        contentsView.addSubview(label)
+        let action = UIAlertAction(title: "入力", style: .default) { (action) in
+            label.text = textFiled.text!
+            label.textColor = UIColor.darkGray
+        }
         
-        for i in 0 ..< numberOfPages {
-                let pageView = createPages(page: i)
-                contentsView.addSubview(pageView)
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        alert.addTextField { (alertTextFiled) in
+            switch name {
+            case "案件入力":
+                alertTextFiled.placeholder = "株式会社おちつき"
+            case "受注額入力":
+                alertTextFiled.placeholder = "30000円"
+            case "粗利額入力":
+                alertTextFiled.placeholder = "5000円"
+            default:
+                alertTextFiled.placeholder = "..."
             }
+            
+            textFiled = alertTextFiled
+        }
         
-        return contentsView
-    }
-    
- 
-    
-    func configureSV() {
-        
-        // scrollViewにcontentsViewを配置させる
-        let subView = createContentsView()
-        scrollView.addSubview(subView)
-        
-        // scrollViewにcontentsViewのサイズを教える
-        scrollView.contentSize = subView.frame.size
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     
+    func checkForEmptyLabel() -> Bool {
+        if let project = projectTitle.text {
+            if project == "" || project == "\(titleName)" {
+                alertForEmptyText(title: "案件名が空欄です")
+                return false
+            } else {
+                if let order = orderAmount.text {
+                    if order == "" || order == "受注額" {
+                        alertForEmptyText(title: "受注額が空欄です")
+                        return false
+                    } else {
+                        if grossProfit.text == "粗利額" {
+                            grossProfit.text = ""
+                        }
+                        return true
+                    }
+                } else {
+                    return false
+                }
+            }
+        } else {
+            return false
+        }
+    }
     
+    
+    func alertForEmptyText(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func closeAndFinsh() {
+        let alert = UIAlertController(title: "入力完了しました", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.textReset()
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func textReset() {
+        let labelColor = UIColor(displayP3Red: 166/255, green: 188/255, blue: 208/255, alpha: 1.0)
+        projectTitle.text = "\(titleName)"
+        orderAmount.text = "受注額"
+        grossProfit.text = "粗利額"
+        projectTitle.textColor = labelColor
+        orderAmount.textColor = labelColor
+        grossProfit.textColor = labelColor
+        scrollView.scrollsToTop = true
+        
+    }
 }

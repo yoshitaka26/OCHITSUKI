@@ -11,6 +11,7 @@ import UIKit
 struct ProjectDataModel : Codable {
     let projectName: String
     let orderAmount: String
+    let grossProfit: String
     let orderDate: Double
 }
 

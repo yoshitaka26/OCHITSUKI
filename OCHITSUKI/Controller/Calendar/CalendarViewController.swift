@@ -34,15 +34,22 @@ class CalendarViewController: UIViewController, ViewLogic {
     private let dayOfWeekLabel = ["日", "月", "火", "水", "木", "金", "土"]
     private var monthCounter = 0
     
+    let dataRecord = DataRecordModel()
+    
+    var projectArray = [ProjectDataModel]()
+    
     //MARK: UI Parts
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBAction func prevButton(_ sender: UIBarButtonItem) {
         prevMonth()
     }
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
         nextMonth()
     }
+    
+    @IBOutlet weak var projectTitle: UILabel!
     
     //MARK: Initialize
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -59,9 +66,29 @@ class CalendarViewController: UIViewController, ViewLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         configure()
         settingLabel()
         getToday()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        
+        if let data = dataRecord.loadItems() {
+            projectArray = data
+            projectArray.sort()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        projectTitle.text = ""
+        
+        if let data = dataRecord.loadItems() {
+            projectArray = data
+            projectArray.sort()
+        }
+        
+        collectionView.reloadData()
+        
     }
     
     //MARK: Setting
@@ -105,11 +132,15 @@ extension CalendarViewController {
     private func nextMonth() {
         monthCounter += 1
         commonSettingMoveMonth()
+        
+        projectTitle.text = ""
     }
     
     private func prevMonth() {
         monthCounter -= 1
         commonSettingMoveMonth()
+        
+        projectTitle.text = ""
     }
     
     private func commonSettingMoveMonth() {
@@ -139,16 +170,35 @@ extension CalendarViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.contentView.viewWithTag(1) as! UILabel
         label.backgroundColor = .clear
+        
         dayOfWeekColor(label, indexPath.row, daysPerWeek)
         showDate(indexPath.section, indexPath.row, cell, label)
+        
+        //追加　受注日にマーク
+        if indexPath.section != 0 {
+            let theDate = "\(title!)\(daysArray[indexPath.row])日"
+                 
+                 for project in projectArray {
+                     let date = Date(timeIntervalSince1970: project.orderDate)
+                     let formatter = DateFormatter()
+                     formatter.dateFormat = "yyyy年M月d日"
+                     let dateorder = "\(formatter.string(from: date))"
+                     
+                     if theDate == dateorder {
+                         label.text?.append("\n※")
+                        return cell
+                     }
+                 }
+        }
+        
         return cell
     }
     
     private func dayOfWeekColor(_ label: UILabel, _ row: Int, _ daysPerWeek: Int) {
         switch row % daysPerWeek {
-        case 0: label.textColor = .red
-        case 6: label.textColor = .blue
-        default: label.textColor = .black
+        case 0: label.textColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        case 6: label.textColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        default: label.textColor = UIColor(red: 166/255, green: 188/255, blue: 208/255, alpha: 1.0)
         }
     }
     
@@ -156,11 +206,13 @@ extension CalendarViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             label.text = dayOfWeekLabel[row]
+            cell.backgroundColor = .white
             cell.selectedBackgroundView = nil
         default:
             label.text = daysArray[row]
+            cell.backgroundColor = .white
             let selectedView = UIView()
-            selectedView.backgroundColor = .gray
+            selectedView.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.3)
             cell.selectedBackgroundView = selectedView
             markToday(label, cell)
         }
@@ -168,11 +220,49 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     private func markToday(_ label: UILabel, _ cell: UICollectionViewCell) {
         if isToday, today.description == label.text {
-            cell.backgroundColor = .orange
+            cell.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.5)
+        }
+        
+        //追加　今日の案件を表示
+        let theDate = "\(title!)\(today.description)日"
+        
+        if isToday {
+            for project in projectArray {
+                let date = Date(timeIntervalSince1970: project.orderDate)
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy年M月d日"
+                let dateorder = "\(formatter.string(from: date))"
+                
+                if theDate == dateorder {
+                    projectTitle.text = project.projectName
+                }
+            }
+        }
+    }
+    
+    
+    //追加　押したら案件名表示
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let theDate = "\(title!)\(daysArray[indexPath.row])日"
+        
+        for project in projectArray {
+            let date = Date(timeIntervalSince1970: project.orderDate)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy年M月d日"
+            let dateorder = "\(formatter.string(from: date))"
+            
+            if theDate == dateorder {
+                projectTitle.text = project.projectName
+                return
+            } else {
+                projectTitle.text = ""
+            }
         }
     }
     
 }
+
+
 
 //MARK:- UICollectionViewDelegateFlowLayout
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
@@ -182,6 +272,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         let weekHeight = weekWidth
         let dayWidth = weekWidth
         let dayHeight = (Int(collectionView.frame.height) - weekHeight) / numberOfWeeks
+        
         return indexPath.section == 0 ? CGSize(width: weekWidth, height: weekHeight) : CGSize(width: dayWidth, height: dayHeight)
     }
     
@@ -200,4 +291,4 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
+    
