@@ -10,23 +10,30 @@ import UIKit
 
 class WelcomViewController: UIViewController {
     let dataRecord = DataRecordModel()
+    var titleName: String = "案件"
     
     @IBOutlet weak var titelLabel: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
-    @IBOutlet weak var resultButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var addButtonName: UILabel!
     
     override func viewDidLoad() {
         addNewButton.layer.cornerRadius = addNewButton.frame.size.height / 4
-
-        resultButton.layer.cornerRadius = resultButton.frame.size.height / 4
+        
+        settingButton.layer.cornerRadius = settingButton.frame.size.height / 4
+        
+        if let name = UserDefaults.standard.value(forKey: "name") as? String {
+            titleName = name
+        }
+        
+        addButtonName.text = "\(titleName)入力"
     }
     
     @IBAction func addNewButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "ToAddView", sender: self)
+        performSegue(withIdentifier: "ToStart", sender: self)
     }
     
-    @IBAction func resultButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "ToTableView", sender: self)
+    @IBAction func settingButton(_ sender: UIButton) {
+          performSegue(withIdentifier: "ToSettingView", sender: self)
     }
-    
 }

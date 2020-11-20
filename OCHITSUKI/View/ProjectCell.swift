@@ -12,6 +12,7 @@ class ProjectCell: UITableViewCell {
     
     @IBOutlet weak var projectLaber: UILabel!
     @IBOutlet weak var orderAmountLaber: UILabel!
+    @IBOutlet weak var grossProfitLabel: UILabel!
     @IBOutlet weak var dateLaber: UILabel!
     
     override func awakeFromNib() {

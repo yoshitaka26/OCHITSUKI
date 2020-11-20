@@ -23,14 +23,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="495" height="88"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UlL-sg-ANU">
-                                        <rect key="frame" x="0.0" y="0.0" width="495" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="495" height="22"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b59-LM-CBw">
-                                                <rect key="frame" x="0.0" y="0.5" width="40" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="0.5" width="40" height="21"/>
                                                 <color key="tintColor" red="0.4823529412" green="0.92941176469999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8Q-2E-9sL">
-                                                <rect key="frame" x="50" y="0.0" width="445" height="29.5"/>
+                                                <rect key="frame" x="50" y="0.0" width="445" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.65098039220000004" green="0.73725490199999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -48,14 +48,14 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d47-qo-KNP">
-                                        <rect key="frame" x="0.0" y="29.5" width="495" height="29"/>
+                                        <rect key="frame" x="0.0" y="22" width="495" height="22"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sHi-W2-Mie">
-                                                <rect key="frame" x="0.0" y="1.5" width="40" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="20.5"/>
                                                 <color key="tintColor" red="0.4823529412" green="0.92941176469999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy2-E2-1GG">
-                                                <rect key="frame" x="50" y="0.0" width="445" height="29"/>
+                                                <rect key="frame" x="50" y="0.0" width="445" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.65098039215686276" green="0.73725490196078436" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -71,15 +71,39 @@
                                             <constraint firstItem="sHi-W2-Mie" firstAttribute="top" secondItem="d47-qo-KNP" secondAttribute="top" id="tYl-BQ-8bz"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pPF-Uc-okA">
+                                        <rect key="frame" x="0.0" y="44" width="495" height="22"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yensign.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mhz-CL-Af9">
+                                                <rect key="frame" x="0.0" y="1" width="40" height="19.5"/>
+                                                <color key="tintColor" red="0.4823529412" green="0.92941176469999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14e-je-zWZ">
+                                                <rect key="frame" x="50" y="0.0" width="445" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.65098039220000004" green="0.73725490199999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="14e-je-zWZ" secondAttribute="trailing" id="8e5-fM-9UB"/>
+                                            <constraint firstItem="mhz-CL-Af9" firstAttribute="leading" secondItem="pPF-Uc-okA" secondAttribute="leading" id="SDi-QM-imq"/>
+                                            <constraint firstAttribute="bottom" secondItem="mhz-CL-Af9" secondAttribute="bottom" id="Uvu-7q-R77"/>
+                                            <constraint firstItem="14e-je-zWZ" firstAttribute="top" secondItem="pPF-Uc-okA" secondAttribute="top" id="Yfm-xd-HsP"/>
+                                            <constraint firstItem="mhz-CL-Af9" firstAttribute="top" secondItem="pPF-Uc-okA" secondAttribute="top" id="g02-kw-AyN"/>
+                                            <constraint firstAttribute="bottom" secondItem="14e-je-zWZ" secondAttribute="bottom" id="kKV-uO-MUv"/>
+                                            <constraint firstItem="14e-je-zWZ" firstAttribute="leading" secondItem="pPF-Uc-okA" secondAttribute="leading" constant="50" id="kYs-fI-Gpw"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-4M-DV7">
-                                        <rect key="frame" x="0.0" y="58.5" width="495" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="66" width="495" height="22"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="twC-Z6-fdf">
-                                                <rect key="frame" x="0.0" y="1" width="40" height="27"/>
+                                                <rect key="frame" x="0.0" y="1" width="40" height="19.5"/>
                                                 <color key="tintColor" red="0.4823529412" green="0.92941176469999998" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-t4-e3N">
-                                                <rect key="frame" x="50" y="0.0" width="445" height="29.5"/>
+                                                <rect key="frame" x="50" y="0.0" width="445" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.65098039215686276" green="0.73725490196078436" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -118,6 +142,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLaber" destination="mCy-t4-e3N" id="Ns7-iA-FKY"/>
+                <outlet property="grossProfitLabel" destination="14e-je-zWZ" id="KAL-Bb-ZRg"/>
                 <outlet property="orderAmountLaber" destination="Yy2-E2-1GG" id="0JK-j2-Td4"/>
                 <outlet property="projectLaber" destination="m8Q-2E-9sL" id="g0H-sd-JQI"/>
             </connections>
@@ -128,5 +153,6 @@
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="yensign.square" catalog="system" width="128" height="114"/>
     </resources>
 </document>
