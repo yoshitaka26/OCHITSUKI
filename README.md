@@ -11,8 +11,6 @@
  -案件リスト表示（日付順）
  　-案件削除（ローカル）
  -案件カレンダー表示
- 
-#### データ  
 
 ## Demo
 ![RPReplay_Final1606202563-1](https://user-images.githubusercontent.com/63494353/100061914-1f3a5c80-2e72-11eb-925a-aff698a7a9d1.gif)
