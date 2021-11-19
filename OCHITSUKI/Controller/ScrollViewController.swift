@@ -27,9 +27,14 @@ class ScrollViewController: UIViewController {
         super.viewDidLoad()
         
         addButton.layer.cornerRadius = addButton.frame.size.height / 4
-        
-        self.orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
-        self.orderDatePicker.setValue(false, forKey: "highlightsToday")
+        if #available(iOS 13.4, *) {
+            orderDatePicker.preferredDatePickerStyle = .wheels
+            orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
+            orderDatePicker.setValue(false, forKeyPath: "highlightsToday")
+        } else {
+            orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
+            orderDatePicker.setValue(false, forKey: "highlightsToday")
+        }
         
         scrollView.isPagingEnabled = false
         
