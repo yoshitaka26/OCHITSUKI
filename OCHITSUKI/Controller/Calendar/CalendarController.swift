@@ -9,7 +9,7 @@
 
 import Foundation
 
-protocol RequestForCalendar: class {
+protocol RequestForCalendar: AnyObject {
     func requestNumberOfWeeks(request: DateItems.ThisMonth.Request)
     func requestDateManager(request: DateItems.ThisMonth.Request)
     

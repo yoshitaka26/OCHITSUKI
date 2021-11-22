@@ -26,14 +26,12 @@ class WelcomViewController: UIViewController {
             titleName = name
         }
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         addButtonName.text = "\(titleName)入力"
     }
     
     @IBAction func addNewButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "ToStart", sender: self)
-    }
-    
-    @IBAction func settingButton(_ sender: UIButton) {
-          performSegue(withIdentifier: "ToSettingView", sender: self)
     }
 }

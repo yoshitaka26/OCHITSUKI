@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AED252446EA0019F202 /* LaunchScreen.storyboard */; };
 		E482A688254290060085D8DE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A687254290060085D8DE /* SettingsTableViewController.swift */; };
 		E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */; };
+		E49C3272274A216A00A04FB3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E49C3271274A216A00A04FB3 /* RealmSwift */; };
+		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */; };
 		E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */; };
 		E4C37B8A252EF8A5006E4B20 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */; };
 		E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */; };
@@ -56,6 +58,7 @@
 		E4737AF0252446EA0019F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E482A687254290060085D8DE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubTableViewController.swift; sourceTree = "<group>"; };
+		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift.swift; sourceTree = "<group>"; };
 		E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
 		E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataModel.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49C3272274A216A00A04FB3 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E49C3275274B156E00A04FB3 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E482A687254290060085D8DE /* SettingsTableViewController.swift */,
+				E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		E4B1442A25410D1C004E3DC2 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 			children = (
 				E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */,
 				E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */,
+				E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */,
 				E4B1442B25410D35004E3DC2 /* Calendar */,
 			);
 			path = Model;
@@ -158,9 +172,8 @@
 				E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */,
 				E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */,
 				E4E66DC32525B278001862A6 /* ProjectTableViewController.swift */,
-				E482A687254290060085D8DE /* SettingsTableViewController.swift */,
-				E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */,
 				E4B1442A25410D1C004E3DC2 /* Calendar */,
+				E49C3275274B156E00A04FB3 /* Setting */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +212,9 @@
 			dependencies = (
 			);
 			name = OCHITSUKI;
+			packageProductDependencies = (
+				E49C3271274A216A00A04FB3 /* RealmSwift */,
+			);
 			productName = OCHITSUKI;
 			productReference = E4737ADC252446E50019F202 /* OCHITSUKI.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +247,9 @@
 				Base,
 			);
 			mainGroup = E4737AD3252446E50019F202;
+			packageReferences = (
+				E49C3270274A216A00A04FB3 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = E4737ADD252446E50019F202 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,6 +295,7 @@
 			files = (
 				E45DE6B5253C103900999087 /* CalendarController.swift in Sources */,
 				E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */,
+				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */,
 				E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */,
 				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
 				E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */,
@@ -555,6 +575,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E49C3270274A216A00A04FB3 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E49C3271274A216A00A04FB3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E49C3270274A216A00A04FB3 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4737AD4252446E50019F202 /* Project object */;
 }

@@ -46,7 +46,9 @@ class ProjectTableViewController: UITableViewController {
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "BackToHomeFromTable", sender: self)
+        guard let nvc = self.navigationController else { return }
+        guard let tbc = nvc.tabBarController else { return }
+        tbc.dismiss(animated: true)
     }
     
     

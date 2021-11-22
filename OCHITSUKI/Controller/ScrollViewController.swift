@@ -26,6 +26,8 @@ class ScrollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
+        
         addButton.layer.cornerRadius = addButton.frame.size.height / 4
         if #available(iOS 13.4, *) {
             orderDatePicker.preferredDatePickerStyle = .wheels
