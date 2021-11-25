@@ -104,27 +104,35 @@ class ProjectTableViewController: UITableViewController {
         cell.dateLaber.text = dateorder
         
         cell.selectionStyle = .none
-        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .destructive, title: "削除") { (contextualAction, view, boolValue) in
+            let targetDate = self.dateOrder[indexPath.section]
+            
+            guard let project = self.schedules[targetDate]?[indexPath.row] else { return }
+            
+            
+            self.delete(element: project)
+            
+            self.dataRecord.saveItems(projectArray: self.projectArray)
+            
+            self.prepare()
 
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let targetDate = dateOrder[indexPath.section]
-        
-        guard let project = schedules[targetDate]?[indexPath.row] else { return }
-        
-        
-        delete(element: project)
-        
-        dataRecord.saveItems(projectArray: projectArray)
-        
-        prepare()
+            tableView.reloadData()
+        }
+        let contextItem2 = UIContextualAction(style: .normal, title: "修正") {  (contextualAction, view, boolValue) in
+            print("edit")
+        }
+        let contextItem3 = UIContextualAction(style: .normal, title: "複製") {  (contextualAction, view, boolValue) in
+            print("複製")
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem, contextItem2, contextItem3])
 
-        tableView.reloadData()
-        
+        return swipeActions
     }
+    
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if tableView.isEditing {

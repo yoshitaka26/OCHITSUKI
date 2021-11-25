@@ -17,7 +17,7 @@ class ProjectCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor(named: "subBaseColor")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
