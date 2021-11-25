@@ -26,15 +26,17 @@ class ScrollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UITabBar.appearance().tintColor = UIColor(named: "wordBoldColor")
+        
         self.navigationController?.isNavigationBarHidden = false
         
         addButton.layer.cornerRadius = addButton.frame.size.height / 4
         if #available(iOS 13.4, *) {
             orderDatePicker.preferredDatePickerStyle = .wheels
-            orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
+            orderDatePicker.setValue(UIColor(named: "wordColor"), forKeyPath: "textColor")
             orderDatePicker.setValue(false, forKeyPath: "highlightsToday")
         } else {
-            orderDatePicker.setValue(UIColor.darkGray, forKeyPath: "textColor")
+            orderDatePicker.setValue(UIColor(named: "wordColor"), forKeyPath: "textColor")
             orderDatePicker.setValue(false, forKey: "highlightsToday")
         }
         
@@ -88,7 +90,7 @@ class ScrollViewController: UIViewController {
         
         let action = UIAlertAction(title: "入力", style: .default) { (action) in
             label.text = textFiled.text!
-            label.textColor = UIColor.darkGray
+            label.textColor = UIColor(named: "wordColor")
         }
         
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
@@ -161,7 +163,7 @@ class ScrollViewController: UIViewController {
     }
     
     func textReset() {
-        let labelColor = UIColor(displayP3Red: 166/255, green: 188/255, blue: 208/255, alpha: 1.0)
+        let labelColor = UIColor(named: "wordColor")
         projectTitle.text = "\(titleName)"
         orderAmount.text = "受注額"
         grossProfit.text = "粗利額"

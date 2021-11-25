@@ -40,7 +40,7 @@ class ProjectTableViewController: UITableViewController {
         
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = editButtonItem
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
         
     }
     
@@ -62,13 +62,13 @@ class ProjectTableViewController: UITableViewController {
         let targetMonth = dateOrder[section]
         
         let label = UILabel()
-        label.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.7)
-        label.textColor = .white
+        label.backgroundColor = UIColor(named: "buttonColor")
+        label.textColor = UIColor(named: "wordColor")
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月"
         let orderMonth = "\(formatter.string(from: targetMonth))"
-        label.text = orderMonth
+        label.text = "  " + orderMonth
         
         return label
     }

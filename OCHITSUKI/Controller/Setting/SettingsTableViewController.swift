@@ -20,7 +20,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = false
         self.navigationController?.isNavigationBarHidden = false

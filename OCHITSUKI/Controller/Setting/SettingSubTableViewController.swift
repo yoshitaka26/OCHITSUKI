@@ -19,8 +19,7 @@ class SettingSubTableViewController: UITableViewController, UITextFieldDelegate 
 
         textField.delegate = self
         
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
-
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
         // UserDefaultsの情報を画面にセットする
         if let name = UserDefaults.standard.value(forKey: "name") as? String {
           textField.text = name
