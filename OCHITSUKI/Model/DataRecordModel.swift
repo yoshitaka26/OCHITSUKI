@@ -10,7 +10,7 @@ import UIKit
 
 struct DataRecordModel {
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-
+    
     
     func saveItems(projectArray: [ProjectDataModel]) {
         let encoder = PropertyListEncoder()
@@ -33,7 +33,17 @@ struct DataRecordModel {
             } catch {
                 print("Error decoding, \(error)")
             }
+        } else {
+            return nil
         }
         return projectArray
+    }
+    
+    func deleteData() {
+        do {
+            try FileManager.default.removeItem(at: dataFilePath!)
+        } catch {
+            print("Error encording item, \(error)")
+        }
     }
 }

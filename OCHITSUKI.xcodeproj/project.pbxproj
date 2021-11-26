@@ -21,6 +21,8 @@
 		E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AED252446EA0019F202 /* LaunchScreen.storyboard */; };
 		E482A688254290060085D8DE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A687254290060085D8DE /* SettingsTableViewController.swift */; };
 		E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */; };
+		E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB097274F9D75001A30A9 /* ColorExtension.swift */; };
+		E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB099274FA3AE001A30A9 /* SettingConst.swift */; };
 		E49C3272274A216A00A04FB3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E49C3271274A216A00A04FB3 /* RealmSwift */; };
 		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */; };
 		E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */; };
@@ -58,6 +60,8 @@
 		E4737AF0252446EA0019F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E482A687254290060085D8DE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubTableViewController.swift; sourceTree = "<group>"; };
+		E48BB097274F9D75001A30A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		E48BB099274FA3AE001A30A9 /* SettingConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConst.swift; sourceTree = "<group>"; };
 		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift.swift; sourceTree = "<group>"; };
 		E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				E4E66DBF2525A351001862A6 /* Model */,
 				E4E66DC02525A359001862A6 /* Controller */,
 				E4737AF62524472B0019F202 /* View */,
+				E48BB096274F9D53001A30A9 /* Common */,
 				E4737AEB252446EA0019F202 /* Assets.xcassets */,
 				E4737AF0252446EA0019F202 /* Info.plist */,
 			);
@@ -125,6 +130,15 @@
 				E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E48BB096274F9D53001A30A9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E48BB097274F9D75001A30A9 /* ColorExtension.swift */,
+				E48BB099274FA3AE001A30A9 /* SettingConst.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E49C3275274B156E00A04FB3 /* Setting */ = {
@@ -299,6 +313,8 @@
 				E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */,
 				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
 				E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */,
+				E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */,
+				E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */,
 				E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */,
 				E4E66DC22525A5D2001862A6 /* DataRecordModel.swift in Sources */,
 				E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */,
@@ -437,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -492,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

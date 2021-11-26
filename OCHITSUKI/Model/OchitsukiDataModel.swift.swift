@@ -10,11 +10,12 @@ import UIKit
 import RealmSwift
 
 class OchitsukiDataModel: Object {
-    @Persisted var uuid: UUID
+    @Persisted var uuid: UUID = UUID()
+    @Persisted var title: String
     @Persisted var modifyDate = Date()
     @Persisted var completedFlag: Bool?
     @Persisted var stateFlag: Int8?
-    @Persisted var orderDate = Date()
+    @Persisted var orderDate: Double
     @Persisted var orderAmount: Float?
     @Persisted var orderAmountUnit: String?
     @Persisted var grossProfit: Float?
@@ -22,4 +23,6 @@ class OchitsukiDataModel: Object {
     @Persisted var detail: OchitsukiDetailDataModel?
 }
 
-class OchitsukiDetailDataModel: Object { }
+class OchitsukiDetailDataModel: Object {
+    @Persisted var uuid: UUID?
+}

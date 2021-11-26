@@ -71,7 +71,7 @@ class CalendarViewController: UIViewController, ViewLogic {
         settingLabel()
         getToday()
         
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
+        self.navigationController?.navigationBar.tintColor = .wordColor
         
         if let data = dataRecord.loadItems() {
             projectArray = data
@@ -196,9 +196,9 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     private func dayOfWeekColor(_ label: UILabel, _ row: Int, _ daysPerWeek: Int) {
         switch row % daysPerWeek {
-        case 0: label.textColor = UIColor(named: "wordBoldColor")
-        case 6: label.textColor = UIColor(named: "wordBoldColor")
-        default: label.textColor = UIColor(named: "wordColor")
+        case 0: label.textColor = .wordBoldColor
+        case 6: label.textColor = .wordBoldColor
+        default: label.textColor = .wordColor
         }
     }
     
@@ -206,13 +206,13 @@ extension CalendarViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             label.text = dayOfWeekLabel[row]
-            cell.backgroundColor = UIColor(named: "subBaseColor")
+            cell.backgroundColor = .subBaseColor
             cell.selectedBackgroundView = nil
         default:
             label.text = daysArray[row]
-            cell.backgroundColor = UIColor(named: "subBaseColor")
+            cell.backgroundColor = .subBaseColor
             let selectedView = UIView()
-            selectedView.backgroundColor = UIColor(named: "buttonColor")
+            selectedView.backgroundColor = .buttonColor
             cell.selectedBackgroundView = selectedView
             markToday(label, cell)
         }
@@ -220,7 +220,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     private func markToday(_ label: UILabel, _ cell: UICollectionViewCell) {
         if isToday, today.description == label.text {
-            cell.backgroundColor = UIColor(named: "buttonColor")
+            cell.backgroundColor = .buttonColor
         }
         
         //追加　今日の案件を表示

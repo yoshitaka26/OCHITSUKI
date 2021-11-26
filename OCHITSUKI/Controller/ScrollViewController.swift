@@ -7,12 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ScrollViewController: UIViewController {
-    
-    let dataRecord = DataRecordModel()
-    var projectArray = [ProjectDataModel]()
-    
     var titleName: String = "案件"
     
     @IBOutlet weak var mainTitleLabel: UILabel!
@@ -33,12 +30,9 @@ class ScrollViewController: UIViewController {
         addButton.layer.cornerRadius = addButton.frame.size.height / 4
         if #available(iOS 13.4, *) {
             orderDatePicker.preferredDatePickerStyle = .wheels
-            orderDatePicker.setValue(UIColor(named: "wordColor"), forKeyPath: "textColor")
-            orderDatePicker.setValue(false, forKeyPath: "highlightsToday")
-        } else {
-            orderDatePicker.setValue(UIColor(named: "wordColor"), forKeyPath: "textColor")
-            orderDatePicker.setValue(false, forKey: "highlightsToday")
-        }
+        } 
+        orderDatePicker.setValue(UIColor(named: "wordColor"), forKeyPath: "textColor")
+        orderDatePicker.setValue(true, forKeyPath: "highlightsToday")
         
         scrollView.isPagingEnabled = false
         
@@ -48,14 +42,6 @@ class ScrollViewController: UIViewController {
         mainTitleLabel.text = "\(titleName)入力"
         textReset()
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let data = dataRecord.loadItems() {
-            projectArray = data
-        }
-    }
-    
     
     @IBAction func projectButtonPressed(_ sender: UIButton) {
         addInfo(name: "\(titleName)入力", label: projectTitle)
@@ -69,13 +55,16 @@ class ScrollViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         if checkForEmptyLabel() {
-            let project = projectTitle.text!
-            let order = orderAmount.text!
-            let profit = grossProfit.text ?? ""
-            let date = orderDatePicker.date.timeIntervalSince1970
-            let data = ProjectDataModel(projectName: project, orderAmount: order, grossProfit: profit, orderDate: date)
-            projectArray.append(data)
-            dataRecord.saveItems(projectArray: projectArray)
+            guard let title = projectTitle.text else { return }
+            guard let order = orderAmount.text else { return }
+            guard let gross = grossProfit.text else { return }
+            let date: Double = orderDatePicker.date.timeIntervalSince1970
+            
+            let dataModel: OchitsukiDataModel = OchitsukiDataModel(value: ["title": title, "orderAmountUnit": order, "grossProfitUnit": gross, "orderDate": date])
+            let realm = try! Realm()
+            try! realm.write({
+                realm.add(dataModel)
+            })
             
             closeAndFinsh()
         }
@@ -90,7 +79,7 @@ class ScrollViewController: UIViewController {
         
         let action = UIAlertAction(title: "入力", style: .default) { (action) in
             label.text = textFiled.text!
-            label.textColor = UIColor(named: "wordColor")
+            label.textColor = .wordColor
         }
         
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
@@ -115,61 +104,51 @@ class ScrollViewController: UIViewController {
     
     
     func checkForEmptyLabel() -> Bool {
-        if let project = projectTitle.text {
-            if project == "" || project == "\(titleName)" {
-                alertForEmptyText(title: "案件名が空欄です")
-                return false
-            } else {
-                if let order = orderAmount.text {
-                    if order == "" || order == "受注額" {
-                        alertForEmptyText(title: "受注額が空欄です")
-                        return false
-                    } else {
-                        if grossProfit.text == "粗利額" {
-                            grossProfit.text = ""
-                        }
-                        return true
-                    }
-                } else {
-                    return false
-                }
-            }
-        } else {
+        guard let project = projectTitle.text else { return false }
+        guard let order = orderAmount.text else { return false }
+        guard let gross = grossProfit.text else { return false }
+        
+        if project.isEmpty || project == titleName {
+            alertForEmptyText(title: "案件名が空欄です")
             return false
         }
+        
+        if order.isEmpty || order == ORDER_AMOUNT {
+            alertForEmptyText(title: "受注額が空欄です")
+            return false
+        }
+        
+        if gross == GROSS_PROFIT {
+            grossProfit.text = String()
+        }
+        return true
     }
     
     
     func alertForEmptyText(title: String) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-        
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        
         present(alert, animated: true, completion: nil)
     }
     
     
     func closeAndFinsh() {
         let alert = UIAlertController(title: "入力完了しました", message: "", preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "OK", style: .default) { (action) in
             self.textReset()
             self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         }
-        
         alert.addAction(action)
-        
         present(alert, animated: true, completion: nil)
     }
     
     func textReset() {
-        let labelColor = UIColor(named: "wordColor")
         projectTitle.text = "\(titleName)"
         orderAmount.text = "受注額"
         grossProfit.text = "粗利額"
-        projectTitle.textColor = labelColor
-        orderAmount.textColor = labelColor
-        grossProfit.textColor = labelColor
+        projectTitle.textColor = .placeholderColor
+        orderAmount.textColor = .placeholderColor
+        grossProfit.textColor = .placeholderColor
         scrollView.scrollsToTop = true
         
     }
