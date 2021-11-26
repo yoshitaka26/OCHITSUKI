@@ -179,6 +179,7 @@ class ProjectTableViewController: UITableViewController {
         if segue.identifier == "ToEditModal" {
             guard let data = editingData else { return }
             let destinationVC = segue.destination as! EditDataModalViewController
+            destinationVC.modalPresentationStyle = .automatic
             destinationVC.delegate = self
             destinationVC.editingData = data
         }

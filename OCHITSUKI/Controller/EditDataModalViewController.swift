@@ -71,6 +71,7 @@ class EditDataModalViewController: BaseViewController {
             editingData.orderAmountUnit = order
             editingData.grossProfitUnit = gross
             editingData.orderDate = date.timeIntervalSince1970
+            editingData.modifyDate = Date()
         }
         self.dismiss(animated: true) {
             self.delegate?.pushBackFromEditView()
