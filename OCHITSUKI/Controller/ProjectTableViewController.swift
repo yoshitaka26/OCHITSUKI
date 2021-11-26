@@ -10,10 +10,11 @@ import UIKit
 import RealmSwift
 
 class ProjectTableViewController: UITableViewController {
-    var projectArray: Results<OchitsukiDataModel>?
+    private var projectArray: Results<OchitsukiDataModel>?
     
-    var schedules = [Date: [OchitsukiDataModel]]()
-    var dateOrder = [Date]()
+    private var schedules = [Date: [OchitsukiDataModel]]()
+    private var dateOrder = [Date]()
+    private var editingData: OchitsukiDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,19 +98,26 @@ class ProjectTableViewController: UITableViewController {
             guard let targetProjects = self.schedules[targetDate] else { return }
             guard indexPath.row < targetProjects.count else { return }
             let project = targetProjects[indexPath.row]
-            
             self.delete(element: project)
         }
-        /*
+        
         let contextItem2 = UIContextualAction(style: .normal, title: EDIT) {  (contextualAction, view, boolValue) in
-            print(EDIT)
+            self.tableView.isEditing = false
+            let targetDate = self.dateOrder[indexPath.section]
+            guard let targetProjects = self.schedules[targetDate] else { return }
+            guard indexPath.row < targetProjects.count else { return }
+            self.editingData = targetProjects[indexPath.row]
+            self.performSegue(withIdentifier: "ToEditModal", sender: self)
         }
         let contextItem3 = UIContextualAction(style: .normal, title: DUPLICATE) {  (contextualAction, view, boolValue) in
-            print(DUPLICATE)
+            let targetDate = self.dateOrder[indexPath.section]
+            guard let targetProjects = self.schedules[targetDate] else { return }
+            guard indexPath.row < targetProjects.count else { return }
+            let project = targetProjects[indexPath.row]
+            self.duplicate(element: project)
         }
-         */
         
-        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem1])
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem1, contextItem2, contextItem3])
 
         return swipeActions
     }
@@ -125,10 +133,8 @@ class ProjectTableViewController: UITableViewController {
     private func loadDataFromRealm() {
         let realm = try! Realm()
         let tasks = realm.objects(OchitsukiDataModel.self)
-        print(tasks)
         projectArray = tasks.sorted(byKeyPath: "orderDate", ascending: true)
         guard let realmData = projectArray else { return }
-        print(realmData)
         
         let f = DateFormatter()
         f.locale = Locale(identifier: "ja_JP")
@@ -156,6 +162,33 @@ class ProjectTableViewController: UITableViewController {
             realm.delete(element)
         })
         loadDataFromRealm()
+        infoAlertViewWithTitle(title: DELETE_DONE)
+    }
+    
+    func duplicate(element: OchitsukiDataModel) {
+        let dataModel: OchitsukiDataModel = OchitsukiDataModel(value: ["title": element.title, "orderAmountUnit": element.orderAmountUnit ?? "", "grossProfitUnit": element.grossProfitUnit ?? "", "orderDate": element.orderDate])
+        let realm = try! Realm()
+        try! realm.write({
+            realm.add(dataModel)
+        })
+        loadDataFromRealm()
+        infoAlertViewWithTitle(title: DUPLICATE_DONE)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToEditModal" {
+            guard let data = editingData else { return }
+            let destinationVC = segue.destination as! EditDataModalViewController
+            destinationVC.delegate = self
+            destinationVC.editingData = data
+        }
+    }
+}
+
+extension ProjectTableViewController: EditDataModalViewControllerDelegate {
+    func pushBackFromEditView() {
+        loadDataFromRealm()
+        infoAlertViewWithTitle(title: EDIT_DONE)
     }
 }
 

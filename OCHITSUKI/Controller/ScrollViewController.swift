@@ -124,14 +124,6 @@ class ScrollViewController: UIViewController {
         return true
     }
     
-    
-    func alertForEmptyText(title: String) {
-        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
     func closeAndFinsh() {
         let alert = UIAlertController(title: "入力完了しました", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (action) in
