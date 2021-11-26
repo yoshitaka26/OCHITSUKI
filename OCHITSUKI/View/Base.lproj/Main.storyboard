@@ -965,9 +965,11 @@
                     </view>
                     <connections>
                         <outlet property="grossTextField" destination="QWO-t5-dLj" id="bhW-3Y-1oL"/>
+                        <outlet property="mainTitleLabel" destination="lFu-F8-epG" id="QRi-mT-5Jr"/>
                         <outlet property="orderDatePicker" destination="gXF-aT-WQS" id="1sM-JV-MSw"/>
                         <outlet property="orderTextField" destination="wVv-CF-7WP" id="T4W-Go-okC"/>
                         <outlet property="saveButton" destination="PkA-lP-6ym" id="C06-jK-0Y4"/>
+                        <outlet property="titleLabel" destination="oZd-PX-3nM" id="pim-BX-Jp6"/>
                         <outlet property="titleTextField" destination="c5h-Lj-5oK" id="LN0-fq-eok"/>
                     </connections>
                 </viewController>

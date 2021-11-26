@@ -24,11 +24,20 @@ class EditDataModalViewController: BaseViewController {
     @IBOutlet weak var orderDatePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var mainTitleLabel: UILabel!
+    private var titleName: String = "案件"
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let data = editingData else {
             self.dismiss(animated: true)
             return
+        }
+        if let name = UserDefaults.standard.value(forKey: "name") as? String {
+            titleName = name
+            mainTitleLabel.text = "\(titleName)修正"
+            titleLabel.text = titleName
         }
         saveButton.layer.cornerRadius = saveButton.frame.size.height / 4
         if #available(iOS 13.4, *) {
