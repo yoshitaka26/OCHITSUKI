@@ -7,88 +7,74 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ProjectTableViewController: UITableViewController {
-    let dataRecord = DataRecordModel()
-    var projectArray = [ProjectDataModel]()
+    private var projectArray: Results<OchitsukiDataModel>?
     
-    var titleName: String = "案件"
-    
-    var schedules = [Date: [ProjectDataModel]]()
-    var dateOrder = [Date]()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let data = dataRecord.loadItems() {
-            projectArray = data
-            projectArray.sort()
-        }
-        prepare()
-        
-        tableView.reloadData()
-    }
+    private var schedules = [Date: [OchitsukiDataModel]]()
+    private var dateOrder = [Date]()
+    private var editingData: OchitsukiDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let name = UserDefaults.standard.value(forKey: "name") as? String {
-          titleName = name
-        }
-        
-        settingLabel()
-        
         tableView.register(UINib(nibName: "ProjectCell", bundle: nil), forCellReuseIdentifier: "ProjectCell")
         
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = editButtonItem
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = .wordColor
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadDataFromRealm()
     }
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "BackToHomeFromTable", sender: self)
+        guard let nvc = self.navigationController else { return }
+        guard let tbc = nvc.tabBarController else { return }
+        tbc.dismiss(animated: true)
     }
     
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return schedules.keys.count
-        
     }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let targetMonth = dateOrder[section]
-        
-        let label = UILabel()
-        label.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.7)
-        label.textColor = .white
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月"
-        let orderMonth = "\(formatter.string(from: targetMonth))"
-        label.text = orderMonth
-        
-        return label
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let targetDate = dateOrder[section]
         return schedules[targetDate, default: []].count
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let targetMonth = dateOrder[section]
+        
+        let label = UILabel()
+        label.backgroundColor = .buttonColor
+        label.textColor = .wordColor
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月"
+        let orderMonth = "\(formatter.string(from: targetMonth))"
+        label.text = "  " + orderMonth
+        
+        return label
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         
         let targetDate = dateOrder[indexPath.section]
+        guard let targetProjects = schedules[targetDate] else { return cell }
+        guard indexPath.row < targetProjects.count else { return cell }
+        let project = targetProjects[indexPath.row]
         
-        guard let project = schedules[targetDate]?[indexPath.row] else {
-            return cell
-        }
-        
-        let name = project.projectName
-        let value = project.orderAmount
-        let profit = project.grossProfit
+        let name = project.title
+        let value = project.orderAmountUnit
+        let profit = project.grossProfitUnit
         
         let date = Date(timeIntervalSince1970: project.orderDate)
         
@@ -102,27 +88,40 @@ class ProjectTableViewController: UITableViewController {
         cell.dateLaber.text = dateorder
         
         cell.selectionStyle = .none
-        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let contextItem1 = UIContextualAction(style: .destructive, title: DELETE) { (contextualAction, view, boolValue) in
+            let targetDate = self.dateOrder[indexPath.section]
+            guard let targetProjects = self.schedules[targetDate] else { return }
+            guard indexPath.row < targetProjects.count else { return }
+            let project = targetProjects[indexPath.row]
+            self.delete(element: project)
+        }
+        
+        let contextItem2 = UIContextualAction(style: .normal, title: EDIT) {  (contextualAction, view, boolValue) in
+            self.tableView.isEditing = false
+            let targetDate = self.dateOrder[indexPath.section]
+            guard let targetProjects = self.schedules[targetDate] else { return }
+            guard indexPath.row < targetProjects.count else { return }
+            self.editingData = targetProjects[indexPath.row]
+            self.performSegue(withIdentifier: "ToEditModal", sender: self)
+        }
+        let contextItem3 = UIContextualAction(style: .normal, title: DUPLICATE) {  (contextualAction, view, boolValue) in
+            let targetDate = self.dateOrder[indexPath.section]
+            guard let targetProjects = self.schedules[targetDate] else { return }
+            guard indexPath.row < targetProjects.count else { return }
+            let project = targetProjects[indexPath.row]
+            self.duplicate(element: project)
+        }
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem1, contextItem2, contextItem3])
 
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let targetDate = dateOrder[indexPath.section]
-        
-        guard let project = schedules[targetDate]?[indexPath.row] else { return }
-        
-        
-        delete(element: project)
-        
-        dataRecord.saveItems(projectArray: projectArray)
-        
-        prepare()
-
-        tableView.reloadData()
-        
+        return swipeActions
     }
+    
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if tableView.isEditing {
@@ -131,32 +130,67 @@ class ProjectTableViewController: UITableViewController {
         return .none
     }
     
-    private func settingLabel() {
-        title = "\(titleName)リスト"
-    }
-    
-    private func prepare() {
+    private func loadDataFromRealm() {
+        let realm = try! Realm()
+        let tasks = realm.objects(OchitsukiDataModel.self)
+        projectArray = tasks.sorted(byKeyPath: "orderDate", ascending: true)
+        guard let realmData = projectArray else { return }
+        
         let f = DateFormatter()
         f.locale = Locale(identifier: "ja_JP")
         f.dateFormat = "yyyy/MM"
         
-        schedules = Dictionary(grouping: projectArray) { project -> Date in
+        let arrayData = Array(realmData)
+        
+        schedules = Dictionary(grouping: arrayData) { project -> Date in
             let date = Date(timeIntervalSince1970: project.orderDate)
             let formatedDate = f.string(from: date)
             return f.date(from: formatedDate)!
         }
-        .reduce(into: [Date: [ProjectDataModel]]()) { dic, tuple in
+        .reduce(into: [Date: [OchitsukiDataModel]]()) { dic, tuple in
             dic[tuple.key] = tuple.value.sorted { $0.orderDate < $1.orderDate}
         }
-        
         // 日付順を保持するための配列
         dateOrder = Array(schedules.keys).sorted { $0 < $1 }
+        
+        tableView.reloadData()
     }
     
-    func delete(element: ProjectDataModel) {
-        projectArray = projectArray.filter({ $0 != element })
+    func delete(element: OchitsukiDataModel) {
+        let realm = try! Realm()
+        try! realm.write({
+            realm.delete(element)
+        })
+        loadDataFromRealm()
+        infoAlertViewWithTitle(title: DELETE_DONE)
     }
     
+    func duplicate(element: OchitsukiDataModel) {
+        let dataModel: OchitsukiDataModel = OchitsukiDataModel(value: ["title": element.title, "orderAmountUnit": element.orderAmountUnit ?? "", "grossProfitUnit": element.grossProfitUnit ?? "", "orderDate": element.orderDate])
+        let realm = try! Realm()
+        try! realm.write({
+            realm.add(dataModel)
+        })
+        loadDataFromRealm()
+        infoAlertViewWithTitle(title: DUPLICATE_DONE)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToEditModal" {
+            guard let data = editingData else { return }
+            let destinationVC = segue.destination as! EditDataModalViewController
+            destinationVC.modalPresentationStyle = .automatic
+            destinationVC.delegate = self
+            destinationVC.editingData = data
+        }
+    }
+}
+
+extension ProjectTableViewController: EditDataModalViewControllerDelegate {
+    func pushBackFromEditView() {
+        loadDataFromRealm()
+        infoAlertViewWithTitle(title: EDIT_DONE)
+    }
 }
 
 

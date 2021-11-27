@@ -71,7 +71,7 @@ class CalendarViewController: UIViewController, ViewLogic {
         settingLabel()
         getToday()
         
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = .wordColor
         
         if let data = dataRecord.loadItems() {
             projectArray = data
@@ -196,9 +196,9 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     private func dayOfWeekColor(_ label: UILabel, _ row: Int, _ daysPerWeek: Int) {
         switch row % daysPerWeek {
-        case 0: label.textColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
-        case 6: label.textColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
-        default: label.textColor = UIColor(red: 166/255, green: 188/255, blue: 208/255, alpha: 1.0)
+        case 0: label.textColor = .wordBoldColor
+        case 6: label.textColor = .wordBoldColor
+        default: label.textColor = .wordColor
         }
     }
     
@@ -206,13 +206,13 @@ extension CalendarViewController: UICollectionViewDataSource {
         switch section {
         case 0:
             label.text = dayOfWeekLabel[row]
-            cell.backgroundColor = .white
+            cell.backgroundColor = .subBaseColor
             cell.selectedBackgroundView = nil
         default:
             label.text = daysArray[row]
-            cell.backgroundColor = .white
+            cell.backgroundColor = .subBaseColor
             let selectedView = UIView()
-            selectedView.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.3)
+            selectedView.backgroundColor = .buttonColor
             cell.selectedBackgroundView = selectedView
             markToday(label, cell)
         }
@@ -220,7 +220,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     private func markToday(_ label: UILabel, _ cell: UICollectionViewCell) {
         if isToday, today.description == label.text {
-            cell.backgroundColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 0.5)
+            cell.backgroundColor = .buttonColor
         }
         
         //追加　今日の案件を表示

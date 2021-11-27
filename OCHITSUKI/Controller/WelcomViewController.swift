@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WelcomViewController: UIViewController {
     let dataRecord = DataRecordModel()
@@ -19,21 +20,39 @@ class WelcomViewController: UIViewController {
     
     override func viewDidLoad() {
         addNewButton.layer.cornerRadius = addNewButton.frame.size.height / 4
-        
         settingButton.layer.cornerRadius = settingButton.frame.size.height / 4
         
         if let name = UserDefaults.standard.value(forKey: "name") as? String {
             titleName = name
         }
         
+        /*
+        let a = ProjectDataModel(projectName: "a", orderAmount: "a", grossProfit: "a", orderDate: Date().timeIntervalSince1970)
+        let b = ProjectDataModel(projectName: "b", orderAmount: "b", grossProfit: "b", orderDate: Date().timeIntervalSince1970)
+        DataRecordModel().saveItems(projectArray: [a, b])
+         */
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         addButtonName.text = "\(titleName)入力"
+        
+        if let data = dataRecord.loadItems() {
+            guard !data.isEmpty else {
+                dataRecord.deleteData()
+                return
+            }
+            let realm = try! Realm()
+            for d in data {
+                let dataModel: OchitsukiDataModel = OchitsukiDataModel(value: ["title": d.projectName, "orderAmountUnit": d.orderAmount, "grossProfitUnit": d.grossProfit, "orderDate": d.orderDate])
+                try! realm.write({
+                    realm.add(dataModel)
+                })
+            }
+            dataRecord.deleteData()
+        }
     }
     
     @IBAction func addNewButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "ToStart", sender: self)
-    }
-    
-    @IBAction func settingButton(_ sender: UIButton) {
-          performSegue(withIdentifier: "ToSettingView", sender: self)
     }
 }

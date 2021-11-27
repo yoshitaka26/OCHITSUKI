@@ -20,7 +20,10 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 123/255, green: 237/255, blue: 141/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.hidesBackButton = false
+        self.navigationController?.isNavigationBarHidden = false
         
         // UserDefaultsの情報を画面にセットする
         if let name = UserDefaults.standard.value(forKey: "name") as? String {
@@ -36,27 +39,6 @@ class SettingsTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange),
                                                name: UserDefaults.didChangeNotification, object: nil)
     }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return 2
-            
-        default:
-            return 0
-        }
-    }
-    
     
     @objc func userDefaultsDidChange(_ notification: Notification) {
       // UserDefaultsの変更があったので画面の情報を更新する
