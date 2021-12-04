@@ -34,9 +34,9 @@ class CalendarViewController: UIViewController, ViewLogic {
     private let dayOfWeekLabel = ["日", "月", "火", "水", "木", "金", "土"]
     private var monthCounter = 0
     
-    let dataRecord = DataRecordModel()
+    var dataManager: OchitsukiDataManager?
     
-    var projectArray = [ProjectDataModel]()
+    var projectArray = [OchitsukiDataModel]()
     
     //MARK: UI Parts
     
@@ -66,25 +66,20 @@ class CalendarViewController: UIViewController, ViewLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        dataManager = OchitsukiDataManager.shared
         
         configure()
         settingLabel()
         getToday()
         
         self.navigationController?.navigationBar.tintColor = .wordColor
-        
-        if let data = dataRecord.loadItems() {
-            projectArray = data
-            projectArray.sort()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         projectTitle.text = ""
         
-        if let data = dataRecord.loadItems() {
-            projectArray = data
-            projectArray.sort()
+        if let manager = dataManager {
+            projectArray = manager.loadDataFromRealm()
         }
         
         collectionView.reloadData()
@@ -177,18 +172,19 @@ extension CalendarViewController: UICollectionViewDataSource {
         //追加　受注日にマーク
         if indexPath.section != 0 {
             let theDate = "\(title!)\(daysArray[indexPath.row])日"
-                 
-                 for project in projectArray {
-                     let date = Date(timeIntervalSince1970: project.orderDate)
-                     let formatter = DateFormatter()
-                     formatter.dateFormat = "yyyy年M月d日"
-                     let dateorder = "\(formatter.string(from: date))"
-                     
-                     if theDate == dateorder {
-                         label.text?.append("\n※")
-                        return cell
-                     }
-                 }
+            
+            for project in projectArray {
+                let date = Date(timeIntervalSince1970: project.orderDate)
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy年M月d日"
+                let dateorder = "\(formatter.string(from: date))"
+                
+                if theDate == dateorder {
+                    label.text?.append("\n⭐️")
+                    return cell
+                }
+            }
+            label.text?.append("\n")
         }
         
         return cell
@@ -222,28 +218,27 @@ extension CalendarViewController: UICollectionViewDataSource {
         if isToday, today.description == label.text {
             cell.backgroundColor = .buttonColor
         }
-        
         //追加　今日の案件を表示
-        let theDate = "\(title!)\(today.description)日"
-        
-        if isToday {
-            for project in projectArray {
-                let date = Date(timeIntervalSince1970: project.orderDate)
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy年M月d日"
-                let dateorder = "\(formatter.string(from: date))"
-                
-                if theDate == dateorder {
-                    projectTitle.text = project.projectName
-                }
-            }
-        }
+        pickUpData(todayDescription: today.description)
     }
     
     
     //追加　押したら案件名表示
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let theDate = "\(title!)\(daysArray[indexPath.row])日"
+        pickUpData(selectedCellIndex: indexPath.row)
+    }
+    
+    func pickUpData(selectedCellIndex: Int? = nil, todayDescription: String? = nil) {
+        var theDate = ""
+        if let index = selectedCellIndex {
+            theDate = "\(title!)\(daysArray[index])日"
+        } else if let today = todayDescription {
+            theDate = "\(title!)\(today)日"
+        }
+        
+        projectTitle.text = ""
+        var count = 0
+        var titleString = ""
         
         for project in projectArray {
             let date = Date(timeIntervalSince1970: project.orderDate)
@@ -252,11 +247,15 @@ extension CalendarViewController: UICollectionViewDataSource {
             let dateorder = "\(formatter.string(from: date))"
             
             if theDate == dateorder {
-                projectTitle.text = project.projectName
-                return
-            } else {
-                projectTitle.text = ""
+                if count != 0 {
+                    titleString.append(" / ")
+                }
+                titleString.append(project.title)
+                count += 1
             }
+        }
+        if count != 0 {
+            projectTitle.text = "\(count)件：\(titleString)"
         }
     }
     

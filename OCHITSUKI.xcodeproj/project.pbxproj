@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
 		E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */; };
 		E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */; };
 		E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B2253C0FA900999087 /* CalendarViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		E41F336E26BE2425001B24A2 /* OCHITSUKITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCHITSUKITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
 		E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		E45DE6B2253C0FA900999087 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */,
 				E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */,
 				E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */,
+				E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */,
 				E4B1442B25410D35004E3DC2 /* Calendar */,
 			);
 			path = Model;
@@ -327,6 +330,7 @@
 				E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */,
 				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */,
 				E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */,
+				E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */,
 				E4FF23642750FDE7001E3243 /* BaseViewController.swift in Sources */,
 				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
 				E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */,
@@ -543,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0.1;
+				CURRENT_PROJECT_VERSION = 2.1.0.0;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -551,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -564,7 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0.0.1;
+				CURRENT_PROJECT_VERSION = 2.1.0.0;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -572,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

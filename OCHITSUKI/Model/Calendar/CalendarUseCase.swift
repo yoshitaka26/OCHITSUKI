@@ -6,7 +6,7 @@
 //  Copyright © 2020 Yoshitaka. All rights reserved.
 //
 
-protocol CalendarLogic: class {
+protocol CalendarLogic: AnyObject {
     func dateManager(year: Int, month: Int)
     func numberOfWeeks(year: Int, month: Int)
 }
