@@ -25,12 +25,28 @@ class ProjectTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = .wordColor
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadDataFromRealm()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if tableView.numberOfSections > 0 {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy年MM月"
+            let date = Date()
+            let thisMonth = formatter.string(from: date)
+            
+            for (index, month) in dateOrder.enumerated() {
+                let monthFormatted = formatter.string(from: month)
+                if thisMonth ==  monthFormatted {
+                    let indexPath = IndexPath(row: NSNotFound, section: index)
+                    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                    return
+                }
+            }
+        }
+    }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         guard let nvc = self.navigationController else { return }
@@ -152,6 +168,7 @@ class ProjectTableViewController: UITableViewController {
         }
         // 日付順を保持するための配列
         dateOrder = Array(schedules.keys).sorted { $0 < $1 }
+        print(dateOrder)
         
         tableView.reloadData()
     }
