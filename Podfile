@@ -6,7 +6,6 @@ target 'OCHITSUKI' do
   use_frameworks!
 
   # Pods for OCHITSUKI
-  pod 'Realm', '~> 10.0'
   pod 'SwiftLint'
   pod 'R.swift', '~> 6.1.0'
 
