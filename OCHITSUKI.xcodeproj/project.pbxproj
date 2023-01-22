@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0926A9B337E2736388DFD8F9 /* Pods_OCHITSUKITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AEA2376993CFD90878591 /* Pods_OCHITSUKITests.framework */; };
+		7C7DEF09C72C23A69D9288A1 /* Pods_OCHITSUKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CDA91A3A96DEF03F5B397A /* Pods_OCHITSUKI.framework */; };
 		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
 		E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */; };
 		E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */; };
@@ -49,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		229AEA2376993CFD90878591 /* Pods_OCHITSUKITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCHITSUKITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D0EBB19E3980CB7701C3CA /* Pods-OCHITSUKITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKITests.release.xcconfig"; path = "Target Support Files/Pods-OCHITSUKITests/Pods-OCHITSUKITests.release.xcconfig"; sourceTree = "<group>"; };
+		81CE61280EE58E85AD292842 /* Pods-OCHITSUKI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKI.release.xcconfig"; path = "Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI.release.xcconfig"; sourceTree = "<group>"; };
+		A3CDA91A3A96DEF03F5B397A /* Pods_OCHITSUKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCHITSUKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C5329B1DB6CB3C8680236F /* Pods-OCHITSUKITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKITests.debug.xcconfig"; path = "Target Support Files/Pods-OCHITSUKITests/Pods-OCHITSUKITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E41F336E26BE2425001B24A2 /* OCHITSUKITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCHITSUKITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
 		E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 		E4FF23632750FDE7001E3243 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E4FF236527510606001E3243 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
 		E4FF23672751067F001E3243 /* UIAlertControllerExtension.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift.swift; sourceTree = "<group>"; };
+		E60057BED9F4E13965EF8C01 /* Pods-OCHITSUKI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKI.debug.xcconfig"; path = "Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0926A9B337E2736388DFD8F9 /* Pods_OCHITSUKITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,17 +104,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49C3272274A216A00A04FB3 /* RealmSwift in Frameworks */,
+				7C7DEF09C72C23A69D9288A1 /* Pods_OCHITSUKI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		392E5BD05B95560929AC1123 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDA91A3A96DEF03F5B397A /* Pods_OCHITSUKI.framework */,
+				229AEA2376993CFD90878591 /* Pods_OCHITSUKITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF7394F3756FC49D571C7CD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E60057BED9F4E13965EF8C01 /* Pods-OCHITSUKI.debug.xcconfig */,
+				81CE61280EE58E85AD292842 /* Pods-OCHITSUKI.release.xcconfig */,
+				A6C5329B1DB6CB3C8680236F /* Pods-OCHITSUKITests.debug.xcconfig */,
+				51D0EBB19E3980CB7701C3CA /* Pods-OCHITSUKITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E4737AD3252446E50019F202 = {
 			isa = PBXGroup;
 			children = (
 				E4737ADE252446E50019F202 /* OCHITSUKI */,
 				E4737ADD252446E50019F202 /* Products */,
+				DF7394F3756FC49D571C7CD6 /* Pods */,
+				392E5BD05B95560929AC1123 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E41F337726BE2425001B24A2 /* Build configuration list for PBXNativeTarget "OCHITSUKITests" */;
 			buildPhases = (
+				1CB04FEE9C5D3D76A0EB6C8B /* [CP] Check Pods Manifest.lock */,
 				E41F336A26BE2425001B24A2 /* Sources */,
 				E41F336B26BE2425001B24A2 /* Frameworks */,
 				E41F336C26BE2425001B24A2 /* Resources */,
@@ -235,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4737AF3252446EA0019F202 /* Build configuration list for PBXNativeTarget "OCHITSUKI" */;
 			buildPhases = (
+				2EBD4E9E27B063D1721A70D2 /* [CP] Check Pods Manifest.lock */,
 				E4737AD8252446E50019F202 /* Sources */,
 				E4737AD9252446E50019F202 /* Frameworks */,
 				E4737ADA252446E50019F202 /* Resources */,
+				D5929FB6D38E14241BF26E56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +349,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CB04FEE9C5D3D76A0EB6C8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCHITSUKITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EBD4E9E27B063D1721A70D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OCHITSUKI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5929FB6D38E14241BF26E56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E41F336A26BE2425001B24A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -384,6 +484,7 @@
 /* Begin XCBuildConfiguration section */
 		E41F337526BE2425001B24A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C5329B1DB6CB3C8680236F /* Pods-OCHITSUKITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -406,6 +507,7 @@
 		};
 		E41F337626BE2425001B24A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51D0EBB19E3980CB7701C3CA /* Pods-OCHITSUKITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -544,6 +646,7 @@
 		};
 		E4737AF4252446EA0019F202 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E60057BED9F4E13965EF8C01 /* Pods-OCHITSUKI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -565,6 +668,7 @@
 		};
 		E4737AF5252446EA0019F202 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81CE61280EE58E85AD292842 /* Pods-OCHITSUKI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
