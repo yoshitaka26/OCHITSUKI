@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import GoogleMobileAds
 
 class SettingsTableViewController: UITableViewController {
     
@@ -16,10 +15,15 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     
-    
+    @IBOutlet weak var bannerView: GADBannerView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        bannerView.adUnitID = Bundle.main.object(forInfoDictionaryKey: "AdMobSettingViewBannerAdUnitId") as? String
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
         self.navigationController?.navigationBar.tintColor = UIColor(named: "wordColor")
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = false

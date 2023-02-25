@@ -9,6 +9,7 @@ target 'OCHITSUKI' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftLint'
   pod 'R.swift', '~> 7.2.0'
+  pod 'RealmSwift'
 
   target 'OCHITSUKITests' do
     inherit! :search_paths
