@@ -7,7 +7,7 @@ target 'OCHITSUKI' do
 
   # Pods for OCHITSUKI
   pod 'SwiftLint'
-  pod 'R.swift', '~> 7.2.0'
+  pod 'R.swift', '~> 7.3.0'
 
   target 'OCHITSUKITests' do
     inherit! :search_paths
