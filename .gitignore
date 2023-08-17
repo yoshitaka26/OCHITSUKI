@@ -7,3 +7,5 @@ xcuserdata/
 Pods/
 
 R.generated.swift
+
+GoogleService-Info.plist

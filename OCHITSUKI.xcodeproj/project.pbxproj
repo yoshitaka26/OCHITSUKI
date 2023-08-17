@@ -17,6 +17,7 @@
 		E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B6253C106400999087 /* CalendarPresenter.swift */; };
 		E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B8253C109C00999087 /* CalendarUseCase.swift */; };
 		E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6BA253C10BA00999087 /* DateItems.swift */; };
+		E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */; };
 		E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737ADF252446E50019F202 /* AppDelegate.swift */; };
 		E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737AE1252446E50019F202 /* SceneDelegate.swift */; };
 		E4737AE7252446E50019F202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AE5252446E50019F202 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		E45DE6B6253C106400999087 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
 		E45DE6B8253C109C00999087 /* CalendarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUseCase.swift; sourceTree = "<group>"; };
 		E45DE6BA253C10BA00999087 /* DateItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItems.swift; sourceTree = "<group>"; };
+		E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E4737ADC252446E50019F202 /* OCHITSUKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHITSUKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4737ADF252446E50019F202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4737AE1252446E50019F202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		E4737ADE252446E50019F202 /* OCHITSUKI */ = {
 			isa = PBXGroup;
 			children = (
+				E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */,
 				E4737ADF252446E50019F202 /* AppDelegate.swift */,
 				E4737AE1252446E50019F202 /* SceneDelegate.swift */,
 				E4E66DBF2525A351001862A6 /* Model */,
@@ -337,6 +340,7 @@
 			files = (
 				E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */,
 				E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */,
+				E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */,
 				E4737AE7252446E50019F202 /* Main.storyboard in Resources */,
 				E4C37B8A252EF8A5006E4B20 /* ProjectCell.xib in Resources */,
 			);
