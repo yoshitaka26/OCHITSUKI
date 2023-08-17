@@ -231,6 +231,7 @@ class ProjectTableViewController: UITableViewController {
 
 extension ProjectTableViewController: EditDataModalViewControllerDelegate {
     func pushBackFromEditView() {
+        tableView.setEditing(true, animated: true)
         loadDataFromRealm()
         infoAlertViewWithTitle(title: EDIT_DONE)
     }
