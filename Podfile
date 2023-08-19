@@ -9,7 +9,7 @@ target 'OCHITSUKI' do
   pod 'FirebaseAnalytics'
   pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftLint'
-  pod 'R.swift', '~> 7.2.0'
+  pod 'R.swift', '~> 7.3.0'
   pod 'RealmSwift'
 
   target 'OCHITSUKITests' do
