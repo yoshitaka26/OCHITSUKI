@@ -6,6 +6,7 @@ target 'OCHITSUKI' do
   use_frameworks!
 
   # Pods for OCHITSUKI
+  pod 'FirebaseAnalytics'
   pod 'Google-Mobile-Ads-SDK'
   pod 'SwiftLint'
   pod 'R.swift', '~> 7.2.0'

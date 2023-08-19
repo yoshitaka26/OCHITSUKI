@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,6 @@
 		E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B8253C109C00999087 /* CalendarUseCase.swift */; };
 		E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6BA253C10BA00999087 /* DateItems.swift */; };
 		E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */; };
-		E46204882A8E6EE7004CA358 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E46204872A8E6EE7004CA358 /* FirebaseAnalyticsSwift */; };
 		E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737ADF252446E50019F202 /* AppDelegate.swift */; };
 		E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737AE1252446E50019F202 /* SceneDelegate.swift */; };
 		E4737AE7252446E50019F202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AE5252446E50019F202 /* Main.storyboard */; };
@@ -105,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46204882A8E6EE7004CA358 /* FirebaseAnalyticsSwift in Frameworks */,
 				7C7DEF09C72C23A69D9288A1 /* Pods_OCHITSUKI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +281,6 @@
 			);
 			name = OCHITSUKI;
 			packageProductDependencies = (
-				E46204872A8E6EE7004CA358 /* FirebaseAnalyticsSwift */,
 			);
 			productName = OCHITSUKI;
 			productReference = E4737ADC252446E50019F202 /* OCHITSUKI.app */;
@@ -295,8 +292,9 @@
 		E4737AD4252446E50019F202 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Yoshitaka;
 				TargetAttributes = {
 					E41F336D26BE2425001B24A2 = {
@@ -318,7 +316,6 @@
 			);
 			mainGroup = E4737AD3252446E50019F202;
 			packageReferences = (
-				E46204862A8E6EE7004CA358 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E4737ADD252446E50019F202 /* Products */;
 			projectDirPath = "";
@@ -726,25 +723,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E46204862A8E6EE7004CA358 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E46204872A8E6EE7004CA358 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E46204862A8E6EE7004CA358 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4737AD4252446E50019F202 /* Project object */;
 }
