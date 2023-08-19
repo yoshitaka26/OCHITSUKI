@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
+import AppTrackingTransparency
 
 class WelcomViewController: UIViewController {
     let dataRecord = DataRecordModel()
@@ -19,6 +21,8 @@ class WelcomViewController: UIViewController {
     @IBOutlet weak var addButtonName: UILabel!
     
     override func viewDidLoad() {
+        requestIDFAPermission()
+
         addNewButton.layer.cornerRadius = addNewButton.frame.size.height / 4
         settingButton.layer.cornerRadius = settingButton.frame.size.height / 4
         
@@ -49,6 +53,14 @@ class WelcomViewController: UIViewController {
                 })
             }
             dataRecord.deleteData()
+        }
+    }
+
+    func requestIDFAPermission() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                GADMobileAds.sharedInstance().start(completionHandler: nil)
+            })
         }
     }
     
