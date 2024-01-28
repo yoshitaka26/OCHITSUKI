@@ -1,0 +1,15 @@
+title: あなたのサイトのタイトル
+email: your-email@example.com
+description: >- # このメッセージはサイトの説明として表示されます。
+  これはあなたのサイトの説明です。
+baseurl: "" # このプロジェクトのサブパス、例えば /blog
+url: "http://yourdomain.com" # サイトのURL
+
+# ソーシャルメディアのユーザー名
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# ビルド設定
+theme: minima
+plugins:
+  - jekyll-feed
