@@ -3,12 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0926A9B337E2736388DFD8F9 /* Pods_OCHITSUKITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AEA2376993CFD90878591 /* Pods_OCHITSUKITests.framework */; };
 		7C7DEF09C72C23A69D9288A1 /* Pods_OCHITSUKI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CDA91A3A96DEF03F5B397A /* Pods_OCHITSUKI.framework */; };
+		E406D12D2C3928EE00733406 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D12C2C3928EE00733406 /* CalendarView.swift */; };
+		E406D13C2C3963C200733406 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D13B2C3963C200733406 /* CalendarViewModel.swift */; };
+		E406D13E2C396DDA00733406 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D13D2C396DDA00733406 /* HomeView.swift */; };
+		E406D1432C39739500733406 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1422C39739500733406 /* ListView.swift */; };
+		E406D1462C39740500733406 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1452C39740500733406 /* AdBannerView.swift */; };
+		E406D1482C39869900733406 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1472C39869900733406 /* AddView.swift */; };
+		E406D14A2C39871500733406 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1492C39871500733406 /* ListViewModel.swift */; };
+		E406D14C2C3A08D700733406 /* ModelContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D14B2C3A08D700733406 /* ModelContext.swift */; };
+		E406D14E2C3A09B000733406 /* SalesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D14D2C3A09B000733406 /* SalesRecord.swift */; };
+		E406D1502C3A0B7100733406 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D14F2C3A0B7100733406 /* CategoryColor.swift */; };
+		E406D1522C3A0C2C00733406 /* SalesStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1512C3A0C2C00733406 /* SalesStatus.swift */; };
+		E406D1552C3A481B00733406 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1542C3A481B00733406 /* SettingView.swift */; };
+		E406D1572C3A488200733406 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1562C3A488200733406 /* AppViewModel.swift */; };
+		E406D1592C3ACBCF00733406 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1582C3ACBCF00733406 /* MainView.swift */; };
 		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
 		E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */; };
 		E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */; };
@@ -28,7 +41,7 @@
 		E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB097274F9D75001A30A9 /* ColorExtension.swift */; };
 		E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB099274FA3AE001A30A9 /* SettingConst.swift */; };
 		E48BB09C27508A59001A30A9 /* EditDataModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB09B27508A59001A30A9 /* EditDataModalViewController.swift */; };
-		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */; };
+		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */; };
 		E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */; };
 		E4C37B8A252EF8A5006E4B20 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */; };
 		E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */; };
@@ -40,23 +53,26 @@
 		E4FF23682751067F001E3243 /* UIAlertControllerExtension.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF23672751067F001E3243 /* UIAlertControllerExtension.swift.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E41F337326BE2425001B24A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4737AD4252446E50019F202 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4737ADB252446E50019F202;
-			remoteInfo = OCHITSUKI;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		229AEA2376993CFD90878591 /* Pods_OCHITSUKITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCHITSUKITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D0EBB19E3980CB7701C3CA /* Pods-OCHITSUKITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKITests.release.xcconfig"; path = "Target Support Files/Pods-OCHITSUKITests/Pods-OCHITSUKITests.release.xcconfig"; sourceTree = "<group>"; };
 		81CE61280EE58E85AD292842 /* Pods-OCHITSUKI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKI.release.xcconfig"; path = "Target Support Files/Pods-OCHITSUKI/Pods-OCHITSUKI.release.xcconfig"; sourceTree = "<group>"; };
 		A3CDA91A3A96DEF03F5B397A /* Pods_OCHITSUKI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCHITSUKI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C5329B1DB6CB3C8680236F /* Pods-OCHITSUKITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHITSUKITests.debug.xcconfig"; path = "Target Support Files/Pods-OCHITSUKITests/Pods-OCHITSUKITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E41F336E26BE2425001B24A2 /* OCHITSUKITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCHITSUKITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E406D12C2C3928EE00733406 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		E406D13B2C3963C200733406 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		E406D13D2C396DDA00733406 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E406D1422C39739500733406 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		E406D1452C39740500733406 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
+		E406D1472C39869900733406 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		E406D1492C39871500733406 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E406D14B2C3A08D700733406 /* ModelContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContext.swift; sourceTree = "<group>"; };
+		E406D14D2C3A09B000733406 /* SalesRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesRecord.swift; sourceTree = "<group>"; };
+		E406D14F2C3A0B7100733406 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
+		E406D1512C3A0C2C00733406 /* SalesStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesStatus.swift; sourceTree = "<group>"; };
+		E406D1542C3A481B00733406 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		E406D1562C3A488200733406 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		E406D1582C3ACBCF00733406 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
 		E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +94,7 @@
 		E48BB097274F9D75001A30A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E48BB099274FA3AE001A30A9 /* SettingConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConst.swift; sourceTree = "<group>"; };
 		E48BB09B27508A59001A30A9 /* EditDataModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataModalViewController.swift; sourceTree = "<group>"; };
-		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift.swift; sourceTree = "<group>"; };
+		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift; sourceTree = "<group>"; };
 		E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
 		E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataModel.swift; sourceTree = "<group>"; };
@@ -92,14 +108,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E41F336B26BE2425001B24A2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0926A9B337E2736388DFD8F9 /* Pods_OCHITSUKITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4737AD9252446E50019F202 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,6 +139,75 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E406D12A2C39196300733406 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E406D1582C3ACBCF00733406 /* MainView.swift */,
+				E406D1402C39733B00733406 /* Add */,
+				E406D12B2C3928D800733406 /* Calendar */,
+				E406D1442C3973F300733406 /* Common */,
+				E406D13F2C396DE000733406 /* Home */,
+				E406D1412C39734100733406 /* List */,
+				E406D1532C3A480400733406 /* Setting */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		E406D12B2C3928D800733406 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				E406D12C2C3928EE00733406 /* CalendarView.swift */,
+				E406D13B2C3963C200733406 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		E406D13F2C396DE000733406 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E406D13D2C396DDA00733406 /* HomeView.swift */,
+				E406D1562C3A488200733406 /* AppViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E406D1402C39733B00733406 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				E406D1472C39869900733406 /* AddView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		E406D1412C39734100733406 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E406D1422C39739500733406 /* ListView.swift */,
+				E406D1492C39871500733406 /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E406D1442C3973F300733406 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E406D1452C39740500733406 /* AdBannerView.swift */,
+				E406D14B2C3A08D700733406 /* ModelContext.swift */,
+				E406D14D2C3A09B000733406 /* SalesRecord.swift */,
+				E406D14F2C3A0B7100733406 /* CategoryColor.swift */,
+				E406D1512C3A0C2C00733406 /* SalesStatus.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E406D1532C3A480400733406 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E406D1542C3A481B00733406 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		E4737AD3252446E50019F202 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				E4737ADC252446E50019F202 /* OCHITSUKI.app */,
-				E41F336E26BE2425001B24A2 /* OCHITSUKITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +232,7 @@
 				E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */,
 				E4737ADF252446E50019F202 /* AppDelegate.swift */,
 				E4737AE1252446E50019F202 /* SceneDelegate.swift */,
+				E406D12A2C39196300733406 /* Screen */,
 				E4E66DBF2525A351001862A6 /* Model */,
 				E4E66DC02525A359001862A6 /* Controller */,
 				E4737AF62524472B0019F202 /* View */,
@@ -223,7 +300,7 @@
 			children = (
 				E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */,
 				E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */,
-				E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift */,
+				E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */,
 				E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */,
 				E4B1442B25410D35004E3DC2 /* Calendar */,
 			);
@@ -246,25 +323,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E41F336D26BE2425001B24A2 /* OCHITSUKITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E41F337726BE2425001B24A2 /* Build configuration list for PBXNativeTarget "OCHITSUKITests" */;
-			buildPhases = (
-				1CB04FEE9C5D3D76A0EB6C8B /* [CP] Check Pods Manifest.lock */,
-				E41F336A26BE2425001B24A2 /* Sources */,
-				E41F336B26BE2425001B24A2 /* Frameworks */,
-				E41F336C26BE2425001B24A2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E41F337426BE2425001B24A2 /* PBXTargetDependency */,
-			);
-			name = OCHITSUKITests;
-			productName = OCHITSUKITests;
-			productReference = E41F336E26BE2425001B24A2 /* OCHITSUKITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E4737ADB252446E50019F202 /* OCHITSUKI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4737AF3252446EA0019F202 /* Build configuration list for PBXNativeTarget "OCHITSUKI" */;
@@ -297,10 +355,6 @@
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Yoshitaka;
 				TargetAttributes = {
-					E41F336D26BE2425001B24A2 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = E4737ADB252446E50019F202;
-					};
 					E4737ADB252446E50019F202 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -322,19 +376,11 @@
 			projectRoot = "";
 			targets = (
 				E4737ADB252446E50019F202 /* OCHITSUKI */,
-				E41F336D26BE2425001B24A2 /* OCHITSUKITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E41F336C26BE2425001B24A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4737ADA252446E50019F202 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,28 +396,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CB04FEE9C5D3D76A0EB6C8B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OCHITSUKITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2EBD4E9E27B063D1721A70D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,23 +438,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E41F336A26BE2425001B24A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4737AD8252446E50019F202 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E406D13E2C396DDA00733406 /* HomeView.swift in Sources */,
 				E4FF23622750F9E1001E3243 /* UIViewContorllerExtension.swift in Sources */,
+				E406D1482C39869900733406 /* AddView.swift in Sources */,
+				E406D14C2C3A08D700733406 /* ModelContext.swift in Sources */,
 				E45DE6B5253C103900999087 /* CalendarController.swift in Sources */,
+				E406D1592C3ACBCF00733406 /* MainView.swift in Sources */,
 				E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */,
-				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift.swift in Sources */,
+				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */,
+				E406D14E2C3A09B000733406 /* SalesRecord.swift in Sources */,
 				E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */,
+				E406D12D2C3928EE00733406 /* CalendarView.swift in Sources */,
 				E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */,
+				E406D1502C3A0B7100733406 /* CategoryColor.swift in Sources */,
 				E4FF23642750FDE7001E3243 /* BaseViewController.swift in Sources */,
 				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
 				E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */,
@@ -440,27 +464,26 @@
 				E4FF236627510606001E3243 /* InfoAlertView.swift in Sources */,
 				E4E66DC22525A5D2001862A6 /* DataRecordModel.swift in Sources */,
 				E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */,
+				E406D1552C3A481B00733406 /* SettingView.swift in Sources */,
+				E406D13C2C3963C200733406 /* CalendarViewModel.swift in Sources */,
 				E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */,
 				E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */,
 				E48BB09C27508A59001A30A9 /* EditDataModalViewController.swift in Sources */,
 				E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */,
 				E482A688254290060085D8DE /* SettingsTableViewController.swift in Sources */,
 				E4FF23682751067F001E3243 /* UIAlertControllerExtension.swift.swift in Sources */,
+				E406D1432C39739500733406 /* ListView.swift in Sources */,
+				E406D1572C3A488200733406 /* AppViewModel.swift in Sources */,
+				E406D1462C39740500733406 /* AdBannerView.swift in Sources */,
 				E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */,
 				E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */,
+				E406D1522C3A0C2C00733406 /* SalesStatus.swift in Sources */,
+				E406D14A2C39871500733406 /* ListViewModel.swift in Sources */,
 				E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E41F337426BE2425001B24A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4737ADB252446E50019F202 /* OCHITSUKI */;
-			targetProxy = E41F337326BE2425001B24A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E4737AE5252446E50019F202 /* Main.storyboard */ = {
@@ -482,52 +505,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E41F337526BE2425001B24A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6C5329B1DB6CB3C8680236F /* Pods-OCHITSUKITests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
-				INFOPLIST_FILE = OCHITSUKITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCHITSUKI.app/OCHITSUKI";
-			};
-			name = Debug;
-		};
-		E41F337626BE2425001B24A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51D0EBB19E3980CB7701C3CA /* Pods-OCHITSUKITests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
-				INFOPLIST_FILE = OCHITSUKITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCHITSUKI.app/OCHITSUKI";
-			};
-			name = Release;
-		};
 		E4737AF1252446EA0019F202 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -581,7 +558,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -638,7 +616,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -654,17 +633,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -676,17 +658,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -695,15 +680,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E41F337726BE2425001B24A2 /* Build configuration list for PBXNativeTarget "OCHITSUKITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E41F337526BE2425001B24A2 /* Debug */,
-				E41F337626BE2425001B24A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E4737AD7252446E50019F202 /* Build configuration list for PBXProject "OCHITSUKI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 import AppTrackingTransparency
+import SwiftUI
+import SwiftData
 
 class WelcomViewController: UIViewController {
     let dataRecord = DataRecordModel()
@@ -39,7 +41,7 @@ class WelcomViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         addButtonName.text = "\(titleName)入力"
-        
+
         if let data = dataRecord.loadItems() {
             guard !data.isEmpty else {
                 dataRecord.deleteData()
@@ -54,6 +56,10 @@ class WelcomViewController: UIViewController {
             }
             dataRecord.deleteData()
         }
+
+        let vc = UIHostingController(rootView: HomeView())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 
     func requestIDFAPermission() {

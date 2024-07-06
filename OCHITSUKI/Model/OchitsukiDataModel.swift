@@ -1,5 +1,5 @@
 //
-//  OchitsukiDataModel.swift.swift
+//  OchitsukiDataModel.swift
 //  OCHITSUKI
 //
 //  Created by Yoshitaka Tanaka on 2021/11/21.
