@@ -9,6 +9,7 @@
 import SwiftUI
 import RealmSwift
 import SwiftData
+import AppTrackingTransparency
 
 struct HomeView: View {
     @StateObject var appViewModel = AppViewModel()
@@ -45,7 +46,7 @@ struct HomeView: View {
             SettingView(appViewModel: appViewModel)
                 .tabItem {
                     Image(systemName: "gearshape")
-                    Text("カレンダー")
+                    Text("設定")
                 }
                 .tag(Tab.setting)
         }
@@ -77,6 +78,12 @@ struct HomeView: View {
                     }
                 }
                 appViewModel.isRealmMigrated = true
+            }
+
+            // 広告のトラッキング許可
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                })
             }
         }
     }

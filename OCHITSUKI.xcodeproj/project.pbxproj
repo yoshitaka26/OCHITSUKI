@@ -23,8 +23,6 @@
 		E406D1572C3A488200733406 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1562C3A488200733406 /* AppViewModel.swift */; };
 		E406D1592C3ACBCF00733406 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1582C3ACBCF00733406 /* MainView.swift */; };
 		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
-		E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */; };
-		E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */; };
 		E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B2253C0FA900999087 /* CalendarViewController.swift */; };
 		E45DE6B5253C103900999087 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B4253C103900999087 /* CalendarController.swift */; };
 		E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B6253C106400999087 /* CalendarPresenter.swift */; };
@@ -33,20 +31,13 @@
 		E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */; };
 		E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737ADF252446E50019F202 /* AppDelegate.swift */; };
 		E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737AE1252446E50019F202 /* SceneDelegate.swift */; };
-		E4737AE7252446E50019F202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AE5252446E50019F202 /* Main.storyboard */; };
 		E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4737AEB252446EA0019F202 /* Assets.xcassets */; };
 		E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AED252446EA0019F202 /* LaunchScreen.storyboard */; };
-		E482A688254290060085D8DE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A687254290060085D8DE /* SettingsTableViewController.swift */; };
-		E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */; };
 		E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB097274F9D75001A30A9 /* ColorExtension.swift */; };
 		E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB099274FA3AE001A30A9 /* SettingConst.swift */; };
-		E48BB09C27508A59001A30A9 /* EditDataModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB09B27508A59001A30A9 /* EditDataModalViewController.swift */; };
 		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */; };
-		E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */; };
-		E4C37B8A252EF8A5006E4B20 /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */; };
 		E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */; };
 		E4E66DC22525A5D2001862A6 /* DataRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */; };
-		E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DC32525B278001862A6 /* ProjectTableViewController.swift */; };
 		E4FF23622750F9E1001E3243 /* UIViewContorllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF23612750F9E1001E3243 /* UIViewContorllerExtension.swift */; };
 		E4FF23642750FDE7001E3243 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF23632750FDE7001E3243 /* BaseViewController.swift */; };
 		E4FF236627510606001E3243 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF236527510606001E3243 /* InfoAlertView.swift */; };
@@ -74,8 +65,6 @@
 		E406D1562C3A488200733406 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		E406D1582C3ACBCF00733406 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
-		E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
-		E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		E45DE6B2253C0FA900999087 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E45DE6B4253C103900999087 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		E45DE6B6253C106400999087 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -85,21 +74,14 @@
 		E4737ADC252446E50019F202 /* OCHITSUKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHITSUKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4737ADF252446E50019F202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4737AE1252446E50019F202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4737AE6252446E50019F202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4737AEB252446EA0019F202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4737AEE252446EA0019F202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4737AF0252446EA0019F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E482A687254290060085D8DE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSubTableViewController.swift; sourceTree = "<group>"; };
 		E48BB097274F9D75001A30A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E48BB099274FA3AE001A30A9 /* SettingConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConst.swift; sourceTree = "<group>"; };
-		E48BB09B27508A59001A30A9 /* EditDataModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataModalViewController.swift; sourceTree = "<group>"; };
 		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift; sourceTree = "<group>"; };
-		E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
-		E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCell.xib; sourceTree = "<group>"; };
 		E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataModel.swift; sourceTree = "<group>"; };
 		E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecordModel.swift; sourceTree = "<group>"; };
-		E4E66DC32525B278001862A6 /* ProjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		E4FF23612750F9E1001E3243 /* UIViewContorllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewContorllerExtension.swift; sourceTree = "<group>"; };
 		E4FF23632750FDE7001E3243 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E4FF236527510606001E3243 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
@@ -235,23 +217,12 @@
 				E406D12A2C39196300733406 /* Screen */,
 				E4E66DBF2525A351001862A6 /* Model */,
 				E4E66DC02525A359001862A6 /* Controller */,
-				E4737AF62524472B0019F202 /* View */,
 				E48BB096274F9D53001A30A9 /* Common */,
 				E4737AEB252446EA0019F202 /* Assets.xcassets */,
+				E4737AED252446EA0019F202 /* LaunchScreen.storyboard */,
 				E4737AF0252446EA0019F202 /* Info.plist */,
 			);
 			path = OCHITSUKI;
-			sourceTree = "<group>";
-		};
-		E4737AF62524472B0019F202 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E4737AE5252446E50019F202 /* Main.storyboard */,
-				E4737AED252446EA0019F202 /* LaunchScreen.storyboard */,
-				E4C37B87252EF8A5006E4B20 /* ProjectCell.swift */,
-				E4C37B88252EF8A5006E4B20 /* ProjectCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E48BB096274F9D53001A30A9 /* Common */ = {
@@ -265,15 +236,6 @@
 				E4FF23672751067F001E3243 /* UIAlertControllerExtension.swift.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		E49C3275274B156E00A04FB3 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				E482A687254290060085D8DE /* SettingsTableViewController.swift */,
-				E482A68A2542978F0085D8DE /* SettingSubTableViewController.swift */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		E4B1442A25410D1C004E3DC2 /* Calendar */ = {
@@ -310,12 +272,7 @@
 		E4E66DC02525A359001862A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E43C24A7252FEC1200ACE6C9 /* WelcomViewController.swift */,
-				E45DE6AE253BBB2F00999087 /* ScrollViewController.swift */,
-				E4E66DC32525B278001862A6 /* ProjectTableViewController.swift */,
 				E4B1442A25410D1C004E3DC2 /* Calendar */,
-				E49C3275274B156E00A04FB3 /* Setting */,
-				E48BB09B27508A59001A30A9 /* EditDataModalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,8 +345,6 @@
 				E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */,
 				E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */,
 				E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */,
-				E4737AE7252446E50019F202 /* Main.storyboard in Resources */,
-				E4C37B8A252EF8A5006E4B20 /* ProjectCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,49 +406,34 @@
 				E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */,
 				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */,
 				E406D14E2C3A09B000733406 /* SalesRecord.swift in Sources */,
-				E4E66DC42525B278001862A6 /* ProjectTableViewController.swift in Sources */,
 				E406D12D2C3928EE00733406 /* CalendarView.swift in Sources */,
 				E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */,
 				E406D1502C3A0B7100733406 /* CategoryColor.swift in Sources */,
 				E4FF23642750FDE7001E3243 /* BaseViewController.swift in Sources */,
 				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
-				E482A68B2542978F0085D8DE /* SettingSubTableViewController.swift in Sources */,
 				E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */,
 				E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */,
 				E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */,
 				E4FF236627510606001E3243 /* InfoAlertView.swift in Sources */,
 				E4E66DC22525A5D2001862A6 /* DataRecordModel.swift in Sources */,
-				E4C37B89252EF8A5006E4B20 /* ProjectCell.swift in Sources */,
 				E406D1552C3A481B00733406 /* SettingView.swift in Sources */,
 				E406D13C2C3963C200733406 /* CalendarViewModel.swift in Sources */,
 				E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */,
 				E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */,
-				E48BB09C27508A59001A30A9 /* EditDataModalViewController.swift in Sources */,
 				E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */,
-				E482A688254290060085D8DE /* SettingsTableViewController.swift in Sources */,
 				E4FF23682751067F001E3243 /* UIAlertControllerExtension.swift.swift in Sources */,
 				E406D1432C39739500733406 /* ListView.swift in Sources */,
 				E406D1572C3A488200733406 /* AppViewModel.swift in Sources */,
 				E406D1462C39740500733406 /* AdBannerView.swift in Sources */,
-				E45DE6AF253BBB2F00999087 /* ScrollViewController.swift in Sources */,
 				E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */,
 				E406D1522C3A0C2C00733406 /* SalesStatus.swift in Sources */,
 				E406D14A2C39871500733406 /* ListViewModel.swift in Sources */,
-				E43C24A8252FEC1200ACE6C9 /* WelcomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4737AE5252446E50019F202 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4737AE6252446E50019F202 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4737AED252446EA0019F202 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -633,7 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -641,7 +581,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -658,7 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -666,7 +606,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.0;
+				MARKETING_VERSION = 2.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
