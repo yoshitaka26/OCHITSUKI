@@ -79,7 +79,7 @@ struct CalendarView: View {
                                 Text("受注")
                                     .frame(width: 80)
                                 Spacer()
-                                Text("¥\(String(Int(salesRecord.actualRevenue)))")
+                                Text(salesRecord.formattedActualRevenue)
                                     .fontWeight(.semibold)
                             }
                             .font(.body)
@@ -88,7 +88,7 @@ struct CalendarView: View {
                                 Text("粗利")
                                     .frame(width: 80)
                                 Spacer()
-                                Text("¥\(String(Int(salesRecord.grossProfit)))")
+                                Text(salesRecord.formattedGrossProfit)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.green)
                             }
@@ -181,7 +181,7 @@ struct DayCell: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(10)
                 .background(
-                    isCurrentDay ? Color.blue.opacity(isToday ? 0.8 : 0.3) : Color.clear
+                    isCurrentDay ? Color.accentColor.opacity(isToday ? 0.8 : 0.3) : Color.clear
                 )
                 .overlay(
                     Rectangle()

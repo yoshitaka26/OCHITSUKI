@@ -60,7 +60,7 @@ struct ListView: View {
                                     Text("受注")
                                         .frame(width: 80)
                                     Spacer()
-                                    Text("¥\(String(Int(salesRecord.actualRevenue)))")
+                                    Text(salesRecord.formattedActualRevenue)
                                         .fontWeight(.semibold)
                                 }
                                 .font(.body)
@@ -69,7 +69,7 @@ struct ListView: View {
                                     Text("粗利")
                                         .frame(width: 80)
                                     Spacer()
-                                    Text("¥\(String(Int(salesRecord.grossProfit)))")
+                                    Text(salesRecord.formattedGrossProfit)
                                         .fontWeight(.semibold)
                                         .foregroundColor(.green)
                                 }

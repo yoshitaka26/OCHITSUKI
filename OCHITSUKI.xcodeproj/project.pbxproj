@@ -22,18 +22,10 @@
 		E406D1552C3A481B00733406 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1542C3A481B00733406 /* SettingView.swift */; };
 		E406D1572C3A488200733406 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1562C3A488200733406 /* AppViewModel.swift */; };
 		E406D1592C3ACBCF00733406 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1582C3ACBCF00733406 /* MainView.swift */; };
+		E41F621C2C45775900EA93AB /* NumberCommasExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */; };
 		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
-		E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B2253C0FA900999087 /* CalendarViewController.swift */; };
-		E45DE6B5253C103900999087 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B4253C103900999087 /* CalendarController.swift */; };
-		E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B6253C106400999087 /* CalendarPresenter.swift */; };
-		E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6B8253C109C00999087 /* CalendarUseCase.swift */; };
-		E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45DE6BA253C10BA00999087 /* DateItems.swift */; };
 		E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */; };
-		E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737ADF252446E50019F202 /* AppDelegate.swift */; };
-		E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4737AE1252446E50019F202 /* SceneDelegate.swift */; };
 		E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4737AEB252446EA0019F202 /* Assets.xcassets */; };
-		E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4737AED252446EA0019F202 /* LaunchScreen.storyboard */; };
-		E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB097274F9D75001A30A9 /* ColorExtension.swift */; };
 		E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BB099274FA3AE001A30A9 /* SettingConst.swift */; };
 		E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */; };
 		E4E66DBE2525A34C001862A6 /* ProjectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */; };
@@ -64,20 +56,12 @@
 		E406D1542C3A481B00733406 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E406D1562C3A488200733406 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		E406D1582C3ACBCF00733406 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCommasExtension.swift; sourceTree = "<group>"; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
-		E45DE6B2253C0FA900999087 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		E45DE6B4253C103900999087 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		E45DE6B6253C106400999087 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
-		E45DE6B8253C109C00999087 /* CalendarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUseCase.swift; sourceTree = "<group>"; };
-		E45DE6BA253C10BA00999087 /* DateItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItems.swift; sourceTree = "<group>"; };
 		E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E4737ADC252446E50019F202 /* OCHITSUKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHITSUKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4737ADF252446E50019F202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4737AE1252446E50019F202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4737AEB252446EA0019F202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4737AEE252446EA0019F202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4737AF0252446EA0019F202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E48BB097274F9D75001A30A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		E48BB099274FA3AE001A30A9 /* SettingConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConst.swift; sourceTree = "<group>"; };
 		E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataModel.swift; sourceTree = "<group>"; };
 		E4E66DBD2525A34C001862A6 /* ProjectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataModel.swift; sourceTree = "<group>"; };
@@ -178,6 +162,7 @@
 				E406D14D2C3A09B000733406 /* SalesRecord.swift */,
 				E406D14F2C3A0B7100733406 /* CategoryColor.swift */,
 				E406D1512C3A0C2C00733406 /* SalesStatus.swift */,
+				E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -212,14 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */,
-				E4737ADF252446E50019F202 /* AppDelegate.swift */,
-				E4737AE1252446E50019F202 /* SceneDelegate.swift */,
 				E406D12A2C39196300733406 /* Screen */,
 				E4E66DBF2525A351001862A6 /* Model */,
-				E4E66DC02525A359001862A6 /* Controller */,
 				E48BB096274F9D53001A30A9 /* Common */,
 				E4737AEB252446EA0019F202 /* Assets.xcassets */,
-				E4737AED252446EA0019F202 /* LaunchScreen.storyboard */,
 				E4737AF0252446EA0019F202 /* Info.plist */,
 			);
 			path = OCHITSUKI;
@@ -228,7 +209,6 @@
 		E48BB096274F9D53001A30A9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E48BB097274F9D75001A30A9 /* ColorExtension.swift */,
 				E48BB099274FA3AE001A30A9 /* SettingConst.swift */,
 				E4FF23612750F9E1001E3243 /* UIViewContorllerExtension.swift */,
 				E4FF23632750FDE7001E3243 /* BaseViewController.swift */,
@@ -238,25 +218,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		E4B1442A25410D1C004E3DC2 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				E45DE6B2253C0FA900999087 /* CalendarViewController.swift */,
-				E45DE6B4253C103900999087 /* CalendarController.swift */,
-				E45DE6B6253C106400999087 /* CalendarPresenter.swift */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
-		E4B1442B25410D35004E3DC2 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				E45DE6B8253C109C00999087 /* CalendarUseCase.swift */,
-				E45DE6BA253C10BA00999087 /* DateItems.swift */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
 		E4E66DBF2525A351001862A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,17 +225,8 @@
 				E4E66DC12525A5D2001862A6 /* DataRecordModel.swift */,
 				E49C3273274A4B7100A04FB3 /* OchitsukiDataModel.swift */,
 				E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */,
-				E4B1442B25410D35004E3DC2 /* Calendar */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E4E66DC02525A359001862A6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E4B1442A25410D1C004E3DC2 /* Calendar */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +294,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4737AEF252446EA0019F202 /* LaunchScreen.storyboard in Resources */,
 				E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */,
 				E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */,
 			);
@@ -401,26 +352,19 @@
 				E4FF23622750F9E1001E3243 /* UIViewContorllerExtension.swift in Sources */,
 				E406D1482C39869900733406 /* AddView.swift in Sources */,
 				E406D14C2C3A08D700733406 /* ModelContext.swift in Sources */,
-				E45DE6B5253C103900999087 /* CalendarController.swift in Sources */,
 				E406D1592C3ACBCF00733406 /* MainView.swift in Sources */,
-				E45DE6B7253C106400999087 /* CalendarPresenter.swift in Sources */,
 				E49C3274274A4B7100A04FB3 /* OchitsukiDataModel.swift in Sources */,
 				E406D14E2C3A09B000733406 /* SalesRecord.swift in Sources */,
 				E406D12D2C3928EE00733406 /* CalendarView.swift in Sources */,
 				E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */,
 				E406D1502C3A0B7100733406 /* CategoryColor.swift in Sources */,
 				E4FF23642750FDE7001E3243 /* BaseViewController.swift in Sources */,
-				E45DE6BB253C10BA00999087 /* DateItems.swift in Sources */,
 				E48BB09A274FA3AE001A30A9 /* SettingConst.swift in Sources */,
-				E48BB098274F9D75001A30A9 /* ColorExtension.swift in Sources */,
-				E45DE6B3253C0FA900999087 /* CalendarViewController.swift in Sources */,
+				E41F621C2C45775900EA93AB /* NumberCommasExtension.swift in Sources */,
 				E4FF236627510606001E3243 /* InfoAlertView.swift in Sources */,
 				E4E66DC22525A5D2001862A6 /* DataRecordModel.swift in Sources */,
 				E406D1552C3A481B00733406 /* SettingView.swift in Sources */,
 				E406D13C2C3963C200733406 /* CalendarViewModel.swift in Sources */,
-				E4737AE0252446E50019F202 /* AppDelegate.swift in Sources */,
-				E45DE6B9253C109C00999087 /* CalendarUseCase.swift in Sources */,
-				E4737AE2252446E50019F202 /* SceneDelegate.swift in Sources */,
 				E4FF23682751067F001E3243 /* UIAlertControllerExtension.swift.swift in Sources */,
 				E406D1432C39739500733406 /* ListView.swift in Sources */,
 				E406D1572C3A488200733406 /* AppViewModel.swift in Sources */,
@@ -432,17 +376,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E4737AED252446EA0019F202 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4737AEE252446EA0019F202 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E4737AF1252446EA0019F202 /* Debug */ = {
@@ -573,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -581,7 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -598,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -606,7 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

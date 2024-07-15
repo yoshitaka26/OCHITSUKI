@@ -43,3 +43,23 @@ final class SalesRecord {
         self.orderDate = orderDate
     }
 }
+
+extension SalesRecord {
+    func formattedCurrencyValue(_ value: Double) -> String {
+        let formatter = NumberFormatter.currencyFormatter
+        formatter.locale = Locale.current // ユーザーの現在のロケールを使用
+
+        // 通貨コードを設定（例：USD, JPY など）
+        formatter.currencyCode = Locale.current.currency?.identifier ?? "USD"
+
+        return formatter.string(from: NSNumber(value: value)) ?? "\(value)"
+    }
+
+    var formattedActualRevenue: String {
+        return formattedCurrencyValue(actualRevenue)
+    }
+
+    var formattedGrossProfit: String {
+        return formattedCurrencyValue(grossProfit)
+    }
+}

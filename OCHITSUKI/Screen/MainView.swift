@@ -10,12 +10,10 @@ import SwiftUI
 
 @main
 struct MainView: App {
-
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .accentColor(Color("AccentColor"))
         }
     }
 }
