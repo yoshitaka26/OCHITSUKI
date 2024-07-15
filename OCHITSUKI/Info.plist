@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>「許可」するとお客様に最適化された広告が表示されます</string>
 	<key>AdMobSettingViewBannerAdUnitId</key>
 	<string>$(ADMOB_SETTING_VIEW_BANNER_AD_UNIT_ID)</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -30,6 +28,8 @@
 	<string>$(ADMOB_APP_ID)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>「許可」するとお客様に最適化された広告が表示されます</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -40,7 +40,7 @@
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
+		<true/>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
@@ -50,21 +50,35 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<key>UILaunchScreens</key>
+	<dict>
+		<key>UILaunchScreenDefinitions</key>
+		<array>
+			<dict>
+				<key>UILaunchScreenIdentifier</key>
+				<string></string>
+				<key>UIImageName</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>UIURLToLaunchScreenAssociations</key>
+		<dict/>
+		<key>UIDefaultLaunchScreen</key>
+		<string></string>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
