@@ -6,15 +6,6 @@ target 'OCHITSUKI' do
   use_frameworks!
 
   # Pods for OCHITSUKI
-  pod 'FirebaseAnalytics'
   pod 'Google-Mobile-Ads-SDK'
-  pod 'SwiftLint'
-  pod 'R.swift', '~> 7.3.0'
   pod 'RealmSwift'
-
-  target 'OCHITSUKITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
