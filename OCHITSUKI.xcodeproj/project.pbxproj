@@ -506,15 +506,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sales Ease";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -531,15 +532,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
 				INFOPLIST_FILE = OCHITSUKI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sales Ease";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.OCHITSUKI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
