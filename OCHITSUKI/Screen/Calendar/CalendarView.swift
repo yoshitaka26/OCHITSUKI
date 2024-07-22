@@ -14,8 +14,24 @@ struct CalendarView: View {
     @State private var currentDate = Date()
     @State private var daysArray: [String] = []
     @State private var numberOfWeeks: Int = 0
+    @State private var dayOfWeekLabels: [String] = []
 
-    private let dayOfWeekLabel = ["日", "月", "火", "水", "木", "金", "土"]
+    private func updateDayOfWeekLabels() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dayOfWeekLabels = dateFormatter.veryShortWeekdaySymbols ?? []
+
+        // 日曜始まりにする場合（必要に応じて）
+        if let sunday = dayOfWeekLabels.last {
+            dayOfWeekLabels.removeLast()
+            dayOfWeekLabels.insert(sunday, at: 0)
+        }
+    }
+
+    private func isWeekend(index: Int) -> Bool {
+        // 0が日曜、6が土曜の場合
+        return index == 0 || index == 6
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -34,11 +50,11 @@ struct CalendarView: View {
 
             // 曜日ヘッダー
             HStack(spacing: 0) {
-                ForEach(dayOfWeekLabel, id: \.self) { day in
-                    Text(day)
+                ForEach(0..<dayOfWeekLabels.count, id: \.self) { index in
+                    Text(dayOfWeekLabels[index])
                         .frame(maxWidth: .infinity)
                         .font(.caption)
-                        .foregroundColor(day == "日" || day == "土" ? .red : .primary)
+                        .foregroundColor(isWeekend(index: index) ? .red : .primary)
                 }
             }
             .padding(.vertical, 8)
@@ -77,7 +93,7 @@ struct CalendarView: View {
                             Text(salesRecord.title)
                             HStack {
                                 Text("受注")
-                                    .frame(width: 80)
+                                    .frame(width: 160, alignment: .leading)
                                 Spacer()
                                 Text(salesRecord.formattedActualRevenue)
                                     .fontWeight(.semibold)
@@ -86,7 +102,7 @@ struct CalendarView: View {
 
                             HStack {
                                 Text("粗利")
-                                    .frame(width: 80)
+                                    .frame(width: 160, alignment: .leading)
                                 Spacer()
                                 Text(salesRecord.formattedGrossProfit)
                                     .fontWeight(.semibold)
@@ -105,6 +121,7 @@ struct CalendarView: View {
             .frame(height: 120)
         }
         .onAppear {
+            updateDayOfWeekLabels()
             updateCalendar()
             listViewModel.fetch()
         }
@@ -151,7 +168,17 @@ struct CalendarView: View {
     /// 現在表示中の年月を文字列で返す
     private func getMonthYearString() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年M月"
+        let locale = Locale.current
+
+        if locale.identifier.starts(with: "ja") {
+            // 日本語環境の場合
+            dateFormatter.dateFormat = "yyyy年M月"
+        } else {
+            // その他の言語環境の場合
+            dateFormatter.dateFormat = "MMMM yyyy"
+        }
+
+        dateFormatter.locale = locale
         return dateFormatter.string(from: currentDate)
     }
 

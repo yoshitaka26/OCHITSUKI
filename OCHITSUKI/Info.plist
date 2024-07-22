@@ -4,18 +4,12 @@
 <dict>
 	<key>AdMobSettingViewBannerAdUnitId</key>
 	<string>$(ADMOB_SETTING_VIEW_BANNER_AD_UNIT_ID)</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>ja_JP</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>ja</string>
-	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>

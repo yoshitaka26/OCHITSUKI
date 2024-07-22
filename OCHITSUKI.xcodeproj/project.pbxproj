@@ -23,6 +23,8 @@
 		E406D1572C3A488200733406 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1562C3A488200733406 /* AppViewModel.swift */; };
 		E406D1592C3ACBCF00733406 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D1582C3ACBCF00733406 /* MainView.swift */; };
 		E41F621C2C45775900EA93AB /* NumberCommasExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */; };
+		E41F62282C4D5E0200EA93AB /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E41F62272C4D5E0200EA93AB /* InfoPlist.xcstrings */; };
+		E41F622A2C4D60ED00EA93AB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E41F62292C4D60ED00EA93AB /* Localizable.xcstrings */; };
 		E420FC47275B4F88003B3A76 /* OchitsukiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */; };
 		E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */; };
 		E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4737AEB252446EA0019F202 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		E406D1562C3A488200733406 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		E406D1582C3ACBCF00733406 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCommasExtension.swift; sourceTree = "<group>"; };
+		E41F62272C4D5E0200EA93AB /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		E41F62292C4D60ED00EA93AB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
 		E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E4737ADC252446E50019F202 /* OCHITSUKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHITSUKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,8 @@
 				E48BB096274F9D53001A30A9 /* Common */,
 				E4737AEB252446EA0019F202 /* Assets.xcassets */,
 				E4737AF0252446EA0019F202 /* Info.plist */,
+				E41F62272C4D5E0200EA93AB /* InfoPlist.xcstrings */,
+				E41F62292C4D60ED00EA93AB /* Localizable.xcstrings */,
 			);
 			path = OCHITSUKI;
 			sourceTree = "<group>";
@@ -275,7 +281,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ja,
 			);
 			mainGroup = E4737AD3252446E50019F202;
 			packageReferences = (
@@ -295,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4737AEC252446EA0019F202 /* Assets.xcassets in Resources */,
+				E41F62282C4D5E0200EA93AB /* InfoPlist.xcstrings in Resources */,
+				E41F622A2C4D60ED00EA93AB /* Localizable.xcstrings in Resources */,
 				E46204852A8E6E7C004CA358 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +441,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -491,6 +500,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -521,6 +531,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -547,6 +558,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

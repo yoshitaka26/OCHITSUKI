@@ -58,7 +58,7 @@ struct ListView: View {
 
                                 HStack {
                                     Text("受注")
-                                        .frame(width: 80)
+                                        .frame(width: 160, alignment: .leading)
                                     Spacer()
                                     Text(salesRecord.formattedActualRevenue)
                                         .fontWeight(.semibold)
@@ -67,7 +67,7 @@ struct ListView: View {
 
                                 HStack {
                                     Text("粗利")
-                                        .frame(width: 80)
+                                        .frame(width: 160, alignment: .leading)
                                     Spacer()
                                     Text(salesRecord.formattedGrossProfit)
                                         .fontWeight(.semibold)

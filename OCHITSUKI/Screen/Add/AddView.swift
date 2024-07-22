@@ -28,14 +28,16 @@ struct AddView: View {
                         .keyboardType(.twitter)
                 }
 
-                HStack(spacing: 20) {
+                HStack(spacing: 10) {
                     Text("受注")
+                        .frame(width: 120, alignment: .leading)
                     TextField("数字を入力してください", text: $actualRevenue)
                         .focused($focused)
                         .keyboardType(.numberPad)
                 }
-                HStack(spacing: 20) {
+                HStack(spacing: 10) {
                     Text("粗利")
+                        .frame(width: 120, alignment: .leading)
                     TextField("数字を入力してください", text: $grossProfit)
                         .focused($focused)
                         .keyboardType(.numberPad)
