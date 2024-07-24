@@ -61,6 +61,7 @@
 		E41F621B2C45775900EA93AB /* NumberCommasExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCommasExtension.swift; sourceTree = "<group>"; };
 		E41F62272C4D5E0200EA93AB /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		E41F62292C4D60ED00EA93AB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E41F622B2C50C16D00EA93AB /* OCHITSUKI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCHITSUKI.entitlements; sourceTree = "<group>"; };
 		E420FC46275B4F88003B3A76 /* OchitsukiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OchitsukiDataManager.swift; sourceTree = "<group>"; };
 		E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E4737ADC252446E50019F202 /* OCHITSUKI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHITSUKI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +201,7 @@
 		E4737ADE252446E50019F202 /* OCHITSUKI */ = {
 			isa = PBXGroup;
 			children = (
+				E41F622B2C50C16D00EA93AB /* OCHITSUKI.entitlements */,
 				E46204842A8E6E7C004CA358 /* GoogleService-Info.plist */,
 				E406D12A2C39196300733406 /* Screen */,
 				E4E66DBF2525A351001862A6 /* Model */,
@@ -515,6 +517,7 @@
 			baseConfigurationReference = E60057BED9F4E13965EF8C01 /* Pods-OCHITSUKI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OCHITSUKI/OCHITSUKI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
@@ -542,6 +545,7 @@
 			baseConfigurationReference = 81CE61280EE58E85AD292842 /* Pods-OCHITSUKI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OCHITSUKI/OCHITSUKI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = VKV3Y2GW5Q;

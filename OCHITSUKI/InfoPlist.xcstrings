@@ -20,6 +20,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "If you 'Allow', you'll see ads tailored to your interests"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "「許可」するとお客様に最適化された広告が表示されます"
           }
         }
