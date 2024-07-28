@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>SalesEase</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>If you &apos;Allow&apos;, you&apos;ll see ads tailored to your interests</string>
+	<string>If you 'Allow', you'll see ads tailored to your interests</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -48,21 +48,25 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchScreens</key>
 	<dict>
+		<key>UIDefaultLaunchScreen</key>
+		<string></string>
 		<key>UILaunchScreenDefinitions</key>
 		<array>
 			<dict>
-				<key>UILaunchScreenIdentifier</key>
-				<string></string>
 				<key>UIImageName</key>
+				<string></string>
+				<key>UILaunchScreenIdentifier</key>
 				<string></string>
 			</dict>
 		</array>
 		<key>UIURLToLaunchScreenAssociations</key>
 		<dict/>
-		<key>UIDefaultLaunchScreen</key>
-		<string></string>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
